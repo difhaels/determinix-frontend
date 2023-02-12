@@ -4,13 +4,13 @@ import Albi from "./img/profile/Albi.jpg";
 
 export default function Agent() {
   return (
-    <div className="px py">
-      <h1 className="pt-20 pb-14 font-bold text-slate-900 text-4xl text-center">DX AGENTS</h1>
+    <div className="px py bg-gray-800">
+      <h1 className="pt-20 pb-14 font-bold text-slate-100 text-4xl text-center">DX AGENTS</h1>
 
-      <div id="sosmed" className="2xl:flex justify-center items-center mb-8 mx-[420px] border-2 border-slate-600 rounded-2xl text-slate-500 hidden">
-        <h1 className="pr-3 text-xl">Tap the card to open social media</h1>
+      <div id="sosmed" className="2xl:flex justify-center items-center mb-8 mx-[450px] border-2 border-slate-200 rounded-2xl text-slate-500 hidden">
+        <h1 className="pr-3 text-xl text-slate-200">Tap the card to open social media</h1>
         <button
-          className="font-bold text-red-600 text-2xl"
+          className="font-bold text-red-500 text-2xl"
           onClick={function hide() {
             const sosmed = document.querySelector("#sosmed");
             sosmed.style.display = "none";
