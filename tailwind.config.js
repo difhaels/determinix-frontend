@@ -17,6 +17,8 @@ module.exports = {
 
       "2xl": "1530px",
       // => @media (min-width: 1570px) { ... }
+      "3xl": "1630px",
+      // => @media (min-width: 1570px) { ... }
     },
     extend: {
       fontFamily: {
