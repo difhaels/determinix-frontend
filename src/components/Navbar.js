@@ -1,10 +1,36 @@
 import { useNavigate } from "react-router-dom";
 import DXlogo3 from "./img/logo/DX-logo-3.png";
+import triangle from "./img/icon/Red_Triangle.svg";
 
 export default function Navbar() {
   const navigate = useNavigate();
-  const project1 = () => navigate("project");
-  const project2 = () => alert("project");
+  const toHome = () => navigate("main");
+  const toProject = () => navigate("project");
+  const toAbout = () => navigate("about");
+  const homeIcon = () => {
+    const home = document.querySelector(".home");
+    const project = document.querySelector(".project");
+    const about = document.querySelector(".about");
+    home.classList.remove("hidden");
+    project.classList.add("hidden");
+    about.classList.add("hidden");
+  };
+  const projectIcon = () => {
+    const home = document.querySelector(".home");
+    const project = document.querySelector(".project");
+    const about = document.querySelector(".about");
+    home.classList.add("hidden");
+    project.classList.remove("hidden");
+    about.classList.add("hidden");
+  };
+  const aboutIcon = () => {
+    const home = document.querySelector(".home");
+    const project = document.querySelector(".project");
+    const about = document.querySelector(".about");
+    home.classList.add("hidden");
+    project.classList.add("hidden");
+    about.classList.remove("hidden");
+  };
   return (
     <nav className="fixed z-50 w-full">
       <div className="flex justify-between items-center px bg-[#131313] opacity-90 relative">
@@ -13,19 +39,34 @@ export default function Navbar() {
         </div>
         {/* desktop */}
         <div className="sm:flex gap-10 text-slate-50 px-3 text-xl items-center hidden">
-          <button onClick={() => navigate("main")} className="hover:text-slate-300">
+          <button
+            onClick={() => {
+              toHome();
+              homeIcon();
+            }}
+            className="relative hover:text-slate-300"
+          >
+            <img src={triangle} width="15px" className="absolute left-5 -top-5 home hidden" />
             Home
           </button>
           <button
             onClick={() => {
-              project1();
-              project2();
+              toProject();
+              projectIcon();
             }}
-            className="hover:text-slate-300"
+            className="relative hover:text-slate-300"
           >
+            <img src={triangle} width="15px" className="absolute left-5 -top-5 project hidden" />
             Project
           </button>
-          <button onClick={() => navigate("about")} className="hover:text-slate-300">
+          <button
+            onClick={() => {
+              toAbout();
+              aboutIcon();
+            }}
+            className="relative hover:text-slate-300"
+          >
+            <img src={triangle} width="15px" className="absolute left-5 -top-5 about hidden" />
             About
           </button>
         </div>
