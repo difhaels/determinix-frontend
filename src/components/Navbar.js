@@ -46,7 +46,7 @@ export default function Navbar() {
             }}
             className="relative hover:text-slate-300"
           >
-            <img src={triangle} width="15px" className="absolute left-5 -top-5 home hidden" />
+            <img src={triangle} alt="triangle" width="15px" className="absolute left-5 -top-5 home hidden" />
             Home
           </button>
           <button
@@ -56,7 +56,7 @@ export default function Navbar() {
             }}
             className="relative hover:text-slate-300"
           >
-            <img src={triangle} width="15px" className="absolute left-5 -top-5 project hidden" />
+            <img src={triangle} alt="triangle" width="15px" className="absolute left-5 -top-5 project hidden" />
             Project
           </button>
           <button
@@ -66,7 +66,7 @@ export default function Navbar() {
             }}
             className="relative hover:text-slate-300"
           >
-            <img src={triangle} width="15px" className="absolute left-5 -top-5 about hidden" />
+            <img src={triangle} alt="triangle" width="15px" className="absolute left-5 -top-5 about hidden" />
             About
           </button>
         </div>
