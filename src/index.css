@@ -38,10 +38,10 @@
 
 /* Agent Start */
 .card-agent-odd {
-  @apply w-[285px] h-[125px] shadow-sm shadow-slate-100 bg-[#c62a41] hover:bg-[#e83550] -ml-16 sm:ml-16 flex items-center justify-between p-3;
+  @apply w-[285px] h-[125px] shadow-sm shadow-slate-100 bg-[#c62a41] hover:bg-[#e83550] -ml-16 sm:ml-0 flex items-center justify-between p-3;
 }
 .card-agent-even {
-  @apply w-[285px] h-[125px] shadow-sm shadow-slate-100 bg-[#c62a41] hover:bg-[#e83550] ml-16 flex items-center justify-between p-3;
+  @apply w-[285px] h-[125px] shadow-sm shadow-slate-100 bg-[#c62a41] hover:bg-[#e83550] ml-16 sm:ml-0 flex items-center justify-between p-3;
 }
 .card-image-about {
   @apply w-[100px] h-[100px];
