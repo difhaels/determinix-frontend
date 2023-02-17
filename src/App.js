@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
+import Home2 from "./components/Home-mobile";
 import About from "./components/About";
 import Project from "./components/Project";
 import Footer from "./components/Footer";
@@ -16,6 +17,7 @@ function App() {
           element={
             <div className="">
               <Home />
+              <Home2 />
             </div>
           }
         />
