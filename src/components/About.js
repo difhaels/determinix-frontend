@@ -4,7 +4,7 @@ import Albi from "./img/profile/Albi.jpg";
 
 export default function Agent() {
   return (
-    <div className="px py bg-[#262626]">
+    <div className="px py">
       <h1 className="pt-20 pb-14 font-bold text-slate-100 text-4xl text-center">DX AGENTS</h1>
 
       <div id="sosmed" className="2xl:flex justify-center items-center mb-8 mx-[450px] border-2 border-slate-200 rounded-2xl text-slate-500 hidden">

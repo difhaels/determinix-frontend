@@ -30,7 +30,7 @@ function App() {
         <Route
           path="/about"
           element={
-            <div>
+            <div className="about">
               <About />
             </div>
           }
