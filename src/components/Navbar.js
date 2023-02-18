@@ -88,10 +88,16 @@ export default function Navbar() {
           onClick={function navMobile() {
             const nav = document.querySelector("#nav");
             nav.classList.toggle("hidden");
+
+            const offButton1 = document.querySelector(".mobile-button-off-1");
+            const offButton2 = document.querySelector(".mobile-button-off-2");
+            offButton1.classList.toggle("hidden");
+            offButton2.classList.toggle("bg-slate-50");
+            offButton2.classList.toggle("bg-red-500");
           }}
         >
-          <div className="bg-slate-100 w-[40px] h-[10px]"></div>
-          <div className="ml-[15px] bg-slate-50 w-[25px] h-[10px]"></div>
+          <div className="mobile-button-off-1"></div>
+          <div className="mobile-button-off-2 bg-slate-50"></div>
         </div>
       </div>
     </nav>

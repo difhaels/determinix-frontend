@@ -16,6 +16,12 @@
 .navbar-fixed {
   @apply fixed z-50;
 }
+.mobile-button-off-1 {
+  @apply bg-slate-100 w-[40px] h-[10px];
+}
+.mobile-button-off-2 {
+  @apply ml-[15px] w-[25px] h-[10px];
+}
 /* Navbar End */
 
 /* Project Start */
