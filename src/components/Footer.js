@@ -3,12 +3,12 @@ import DXlogo1 from "./img/logo/DX-logo-1.png";
 export default function Footer() {
   return (
     <footer className="justify-between bg-[#131313] text-white sm:py-24">
-      <div className="sm:flex justify-center hidden">
+      <div className="sm:flex hidden justify-center">
         <div className="my-9 mr-52">
           <img src={DXlogo1} width="70" alt="dx" />
         </div>
         <div className="block mr-40">
-          <h1 className="font-bold">LANGUAGE</h1>
+          <h1 className="font-bold">TOOLS</h1>
           <a className="block" href="https://id.wikipedia.org/wiki/HTML" target={"_blank"} rel="noreferrer">
             HTML
           </a>
@@ -47,6 +47,10 @@ export default function Footer() {
           </a>
           <a className="block" href="https://hy-grou.github.io/" target={"_blank"} rel="noreferrer">
             Grouu
+          </a>
+          <h1 className="font-bold pt-2">GITHUB</h1>
+          <a className="block" href="https://github.com/difhaels" target={"_blank"} rel="noreferrer">
+            Difhaels
           </a>
         </div>
       </div>
