@@ -4,7 +4,7 @@ import triangle from "./img/icon/Red_Triangle.svg";
 
 export default function Navbar() {
   const navigate = useNavigate();
-  const toHome = () => navigate("main");
+  const toHome = () => navigate("determinix");
   const toProject = () => navigate("project");
   const toAbout = () => navigate("about");
   const homeIcon = () => {

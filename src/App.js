@@ -13,9 +13,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route
-          path="/main"
+          path="/determinix"
           element={
-            <div className="">
+            <div>
               <Home />
               <Home2 />
             </div>
