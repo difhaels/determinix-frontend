@@ -24,7 +24,7 @@ function App() {
         <Route
           path="/project"
           element={
-            <div className="project">
+            <div className="bg">
               <Project />
             </div>
           }
@@ -32,7 +32,7 @@ function App() {
         <Route
           path="/about"
           element={
-            <div className="about">
+            <div className="bg">
               <About />
             </div>
           }

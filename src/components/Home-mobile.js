@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "../components/css/Main.css";
 
 const Home = () => {
   return (
@@ -41,7 +42,7 @@ const Intro = () => {
 
 const HomeMobile = () => {
   return (
-    <div className="bg-[#292828] block sm:hidden">
+    <div className="bg block sm:hidden">
       <Home />
       <Intro />
     </div>
