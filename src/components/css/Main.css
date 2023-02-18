@@ -2,3 +2,19 @@
   background-image: url("../img/bg/bg1.jpeg");
   height: auto;
 }
+
+/* Home css start */
+.swiper .swiper-pagination,
+.swiper .swiper-button-prev {
+  color: #c62a41;
+}
+.swiper .swiper-pagination-bullet-active {
+  background-color: #c62a41;
+}
+.swiper {
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+/* Home css end */
