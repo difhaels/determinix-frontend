@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/determinix/main/static/css/main.5f6c2e63.css",
-    "main.js": "/determinix/main/static/js/main.8c4d8ffc.js",
-    "static/media/bg2.jpeg": "/determinix/main/static/media/bg2.c938a376fd4c5aa59af5.jpeg",
-    "static/media/bg1.jpeg": "/determinix/main/static/media/bg1.a08ccda1be456dcab3d0.jpeg",
-    "static/media/bg3.jpeg": "/determinix/main/static/media/bg3.77dacd948827249b3bea.jpeg",
-    "static/media/Aru.jpeg": "/determinix/main/static/media/Aru.645263d56f6d512788fa.jpeg",
-    "static/media/Agung.jpg": "/determinix/main/static/media/Agung.a7ed166959cd082416cd.jpg",
-    "static/media/Albi.jpg": "/determinix/main/static/media/Albi.f420f2a071a946e66616.jpg",
-    "static/media/DX-logo-3.png": "/determinix/main/static/media/DX-logo-3.3ca3d8f14ecd9c787064.png",
-    "static/media/DX-logo-1.png": "/determinix/main/static/media/DX-logo-1.df4a4b33936cefad578d.png",
-    "index.html": "/determinix/main/index.html",
-    "static/media/Red_Triangle.svg": "/determinix/main/static/media/Red_Triangle.25cd9c4fe358ae5491d97f6186227f41.svg",
-    "main.5f6c2e63.css.map": "/determinix/main/static/css/main.5f6c2e63.css.map",
-    "main.8c4d8ffc.js.map": "/determinix/main/static/js/main.8c4d8ffc.js.map"
+    "main.css": "/main/static/css/main.2ce01057.css",
+    "main.js": "/main/static/js/main.3319e11c.js",
+    "static/media/bg2.jpeg": "/main/static/media/bg2.c938a376fd4c5aa59af5.jpeg",
+    "static/media/bg1.jpeg": "/main/static/media/bg1.a08ccda1be456dcab3d0.jpeg",
+    "static/media/bg3.jpeg": "/main/static/media/bg3.77dacd948827249b3bea.jpeg",
+    "static/media/Aru.jpeg": "/main/static/media/Aru.645263d56f6d512788fa.jpeg",
+    "static/media/Agung.jpg": "/main/static/media/Agung.a7ed166959cd082416cd.jpg",
+    "static/media/Albi.jpg": "/main/static/media/Albi.f420f2a071a946e66616.jpg",
+    "static/media/DX-logo-3.png": "/main/static/media/DX-logo-3.3ca3d8f14ecd9c787064.png",
+    "static/media/DX-logo-1.png": "/main/static/media/DX-logo-1.df4a4b33936cefad578d.png",
+    "index.html": "/main/index.html",
+    "static/media/Red_Triangle.svg": "/main/static/media/Red_Triangle.25cd9c4fe358ae5491d97f6186227f41.svg",
+    "main.2ce01057.css.map": "/main/static/css/main.2ce01057.css.map",
+    "main.3319e11c.js.map": "/main/static/js/main.3319e11c.js.map"
   },
   "entrypoints": [
-    "static/css/main.5f6c2e63.css",
-    "static/js/main.8c4d8ffc.js"
+    "static/css/main.2ce01057.css",
+    "static/js/main.3319e11c.js"
   ]
 }
