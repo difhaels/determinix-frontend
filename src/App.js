@@ -13,7 +13,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route
-          path="/determinix"
+          path="/"
           element={
             <div>
               <Home />

@@ -4,7 +4,7 @@ import triangle from "./img/icon/Red_Triangle.svg";
 
 export default function Navbar() {
   const navigate = useNavigate();
-  const toHome = () => navigate("determinix");
+  const toHome = () => navigate("/");
   const toProject = () => navigate("project");
   const toAbout = () => navigate("about");
   const homeIcon = () => {
@@ -73,7 +73,7 @@ export default function Navbar() {
 
         {/* mobile */}
         <div className="gap-3 py-2 rounded-md text-slate-50 px-3 text-xl items-center sm:hidden absolute bg-slate-600 right-3 top-24 hidden" id="nav">
-          <button onClick={() => navigate("main")} className="block pb-1">
+          <button onClick={() => navigate("/")} className="block pb-1">
             Home
           </button>
           <button onClick={() => navigate("project")} className="block pb-1">
