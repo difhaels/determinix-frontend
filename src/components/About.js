@@ -1,6 +1,8 @@
 import Agung from "./img/profile/Agung.jpg";
 import Aru from "./img/profile/Aru.jpeg";
 import Albi from "./img/profile/Albi.jpg";
+import Wisnu from "./img/profile/Wisnu.jpg";
+
 
 export default function Agent() {
   return (
@@ -45,6 +47,15 @@ export default function Agent() {
             <h1 className="card-text-about">Albi Fahri</h1>
             <div className="card-line-about"></div>
             <h1 className="card-text-about">Kuroneko</h1>
+          </div>
+        </a>
+
+        <a href="https://www.instagram.com/wsnuhrtno/?hl=id" target={"_blank"} rel="noreferrer" className="card-agent-even">
+          <img src={Wisnu} alt="WISNU" className="card-image-about" />
+          <div>
+            <h1 className="card-text-about">Wisnu Hartono</h1>
+            <div className="card-line-about"></div>
+            <h1 className="card-text-about">Wsnuhrtno</h1>
           </div>
         </a>
       </div>
