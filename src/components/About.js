@@ -50,6 +50,14 @@ export default function Agent() {
           </div>
         </a>
 
+        <a href="https://www.instagram.com/krisna.svx/?hl=id" target={"_blank"} rel="noreferrer" className="card-agent-even">
+          <img src={Krisna} alt="Krisna" className="card-image-about" />
+          <div>
+            <h1 className="card-text-about">Krisna Setyo</h1>
+            <div className="card-line-about"></div>
+            <h1 className="card-text-about">S v X</h1>h
+        </a>
+
         <a href="https://www.instagram.com/wsnuhrtno/?hl=id" target={"_blank"} rel="noreferrer" className="card-agent-even">
           <img src={Wisnu} alt="WISNU" className="card-image-about" />
           <div>
@@ -58,6 +66,7 @@ export default function Agent() {
             <h1 className="card-text-about">Wsnuhrtno</h1>
           </div>
         </a>
+
       </div>
     </div>
   );
