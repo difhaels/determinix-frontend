@@ -47,6 +47,15 @@ export default function Agent() {
             <h1 className="card-text-about">Kuroneko</h1>
           </div>
         </a>
+
+        <a href="https://www.instagram.com/krisna.svx/?hl=id" target={"_blank"} rel="noreferrer" className="card-agent-even">
+          <img src={Krisna} alt="Krisna" className="card-image-about" />
+          <div>
+            <h1 className="card-text-about">Krisna Setyo</h1>
+            <div className="card-line-about"></div>
+            <h1 className="card-text-about">S v X</h1>
+          </div>
+        </a>
       </div>
     </div>
   );
