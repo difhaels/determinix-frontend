@@ -59,7 +59,7 @@ export default function Agent() {
           </div>
         </a>
 
-        <a href="https://www.instagram.com/wsnuhrtno/?hl=id" target={"_blank"} rel="noreferrer" className="card-agent-odd">
+        <a href="https://www.instagram.com/wsnuhrtno_._/?hl=id" target={"_blank"} rel="noreferrer" className="card-agent-odd">
           <img src={Wisnu} alt="WISNU" className="card-image-about" />
           <div>
             <h1 className="card-text-about">Wisnu Hartono</h1>
