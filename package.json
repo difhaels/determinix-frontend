@@ -6,9 +6,11 @@
     "cra-template": "1.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^7.0.2",
     "react-scripts": "5.0.1"
   },
   "scripts": {
+    "tw": "npx tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -31,5 +33,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.16"
   }
 }
