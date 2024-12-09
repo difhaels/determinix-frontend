@@ -8,6 +8,15 @@ export default function home() {
       <div className="navbar">
         <Navbar />
       </div>
+      <div>
+        <div className="about"></div>
+        <div className="showcase"></div>
+        <div className="articles"></div>
+        <div className="activities"></div>
+      </div>
+      <div className='footer'>
+        <Footer />
+      </div>
     </div>
   )
 }
