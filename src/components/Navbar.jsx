@@ -7,13 +7,14 @@ export default function Navbar({ isScrolled }) {
   const links = [
     { name: "Home", link: "/" },
     { name: "Showcase", link: "/showcase" },
-    { name: "Articles", link: "/Articles" },
+    { name: "Articles", link: "/articles" },
+    { name: "Activities", link: "/activities" },
     { name: "About", link: "/about" },
   ];
 
   return (
     <nav className="top-0 h-[6.5rem] w-full flex justify-between fixed z-[2] py-0 px-16 items-center">
-      <div className="flex h-16">
+      <div className="flex h-14">
         <img src={dxlogo} alt="dxlogo"/>
       </div>
       <div>
