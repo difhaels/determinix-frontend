@@ -1,8 +1,13 @@
 import React from 'react'
 import "../css/output.css"
+import Navbar from '../components/Navbar'
 
 export default function home() {
   return (
-    <div className='bg-blue-600 text-yellow-300'>home</div>
+    <div className="">
+      <div className="navbar">
+        <Navbar />
+      </div>
+    </div>
   )
 }
