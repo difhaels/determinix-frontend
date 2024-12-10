@@ -13,8 +13,8 @@ export default function Navbar({ isScrolled }) {
   ];
 
   return (
-    <nav className="top-0 h-[6.5rem] w-full flex justify-between fixed z-[2] py-0 px-16 items-center">
-      <div className="flex h-14">
+    <nav className={`top-0 h-[4rem] w-full flex justify-between fixed z-[2] py-0 px-16 items-center ${isScrolled ? "bg-white" : ""}`}>
+      <div className="flex h-10">
         <img src={dxlogo} alt="dxlogo"/>
       </div>
       <div>

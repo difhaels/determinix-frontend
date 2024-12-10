@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "../css/output.css"
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -8,11 +8,16 @@ import Showcase from '../components/Showcase'
 import Articles from '../components/Articles'
 import Activities from '../components/Activities'
 
-export default function home() {
+export default function Home() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  window.onscroll = () => {
+    setIsScrolled(window.scrollY === 0 ? false: true);
+    return () => (window.onscroll = null)
+  }
   return (
     <div className="">
       <div className="navbar">
-        <Navbar />
+        <Navbar isScrolled={isScrolled}/>
       </div>
       <div className='flex flex-wrap gap-5'>
         <div className="about w-full pt-36 bg-gradient-to-b from-red-100">

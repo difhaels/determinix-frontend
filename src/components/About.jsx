@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import dxt1 from "../assets/dxt1.jpeg";
 import dxt2 from "../assets/dxt2.jpeg";
 
 export default function About() {
+  const [test, setTest] = useState(0);
   const dxt = [
-    { img: dxt2, alt:"dx2"}, 
-    { img: dxt1, alt:"dx1"}, 
-    { img: dxt2, alt:"dx2"}, 
+    { img: dxt2, alt: "dx2" },
+    { img: dxt1, alt: "dx1" },
+    { img: dxt2, alt: "dx3" },
   ];
   return (
     <div className="px-16">
@@ -19,16 +20,24 @@ export default function About() {
         society.
       </h1>
       <div className="flex justify-center mt-5">
-        <button className="bg-red-500 text-white px-4 py-2 rounded-sm">Click For Nothing</button>
+        <button
+          onClick={() => {
+            setTest(test + 1);
+            console.log(test + 1);
+          }}
+          className="bg-red-500 text-white px-4 py-2 rounded-sm"
+        >
+          Click For Nothing
+        </button>
       </div>
       <div className="flex justify-center gap-5 mt-5">
-      {dxt.map(({img, alt}) => {
-            return (
-              <div className="w-64 h-44 overflow-hidden bg-white shadow-lg px-2 py-2">
-                <img src={img} alt={alt} className="w-full h-full object-cover"/>
-              </div>
-            );
-          })}
+        {dxt.map(({ img, alt }) => {
+          return (
+            <div className="w-64 h-44 overflow-hidden bg-white shadow-lg px-2 py-2" key={alt}>
+              <img src={img} alt={alt} className="w-full h-full object-cover" />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
