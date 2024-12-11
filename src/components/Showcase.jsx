@@ -6,7 +6,7 @@ export default function Showcase() {
   return (
     <div>
       <Divider/>
-      <More what={"Showcases"}/>
+      <More what={"Showcases"} where={"showcase"}/>
     </div>
   )
 }
