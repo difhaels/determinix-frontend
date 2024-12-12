@@ -7,8 +7,8 @@ export default function Navbar({ isScrolled }) {
   const links = [
     { name: "Home", link: "/" },
     { name: "Showcase", link: "/showcase" },
-    { name: "Articles", link: "/articles" },
     { name: "Activities", link: "/activities" },
+    { name: "Articles", link: "/articles" },
     { name: "About", link: "/about" },
   ];
 

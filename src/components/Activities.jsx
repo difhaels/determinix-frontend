@@ -14,7 +14,7 @@ export default function Activities() {
         <CardActivities />
         <CardActivities />
       </div>
-      <More what={"Activities"} where={"Activities"}/>
+      <More what={"Activities"} where={"activities"}/>
     </div>
   )
 }

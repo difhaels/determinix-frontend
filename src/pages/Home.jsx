@@ -26,14 +26,14 @@ export default function Home() {
         <div className="showcase w-full pt-16">
           <Showcase />
         </div>
-        <div className="articles w-full pt-16">
-          <Articles />
-        </div>
         <div className="activities w-full pt-16">
           <Activities />
         </div>
+        <div className="articles w-full pt-16">
+          <Articles />
+        </div>
       </div>
-      <div className='footer'>
+      <div className='footer pt-16'>
         <Footer />
       </div>
     </div>
