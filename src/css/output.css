@@ -645,6 +645,18 @@ video {
   width: 30rem;
 }
 
+.w-1 {
+  width: 0.25rem;
+}
+
+.w-2 {
+  width: 0.5rem;
+}
+
+.w-4 {
+  width: 1rem;
+}
+
 .flex-grow {
   flex-grow: 1;
 }
@@ -859,6 +871,10 @@ video {
 
 .font-medium {
   font-weight: 500;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .text-red-600 {

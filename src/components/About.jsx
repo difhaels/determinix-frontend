@@ -11,7 +11,7 @@ export default function About() {
   ];
   return (
     <div className="px-16">
-      <h1 className="font-bold text-5xl text-center">
+      <h1 className="font-bold text-5xl text-center italic">
         DETERMINI<span className="text-red-600">X</span>
       </h1>
       <h1 className="text-center w-1/2 mx-auto mt-3">
