@@ -4,6 +4,7 @@ import "../css/output.css"
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import PageTitle from '../elements/PageTilte'
+import CardShowCase from '../elements/CardShowCase'
 
 export default function Showcase() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,6 +19,9 @@ export default function Showcase() {
       </div>
       <div>
         <PageTitle what={"Showcase"}/>
+        <div className="flex justify-center pt-10">
+          <CardShowCase/>
+        </div>
       </div>
       <div className='footer pt-16'>
         <Footer />

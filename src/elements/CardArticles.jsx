@@ -1,7 +1,7 @@
 import React from "react";
 import lepy from "../assets/lepy.png";
 
-export default function CardShowCase() {
+export default function CardArticles() {
   return (
     <div className="px-2 py-2 flex">
       <div className="w-64 h-32">

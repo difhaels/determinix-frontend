@@ -10,7 +10,7 @@ export default function CardShowCase() {
         <img
           src={lepy}
           alt="a"
-          className="w-full h-full object-cover rounded-md"
+          className="w-full h-full object-cover rounded-sm"
         />
       </div>
       <div className="px-2">
