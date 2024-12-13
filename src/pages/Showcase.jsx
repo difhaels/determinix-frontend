@@ -17,14 +17,18 @@ export default function Showcase() {
       <div className="navbar">
         <Navbar isScrolled={isScrolled}/>
       </div>
-      <div>
+      <div className='bg-gradient-to-b from-sky-500 to-white'>
         <PageTitle what={"Showcase"}/>
-        <div className="flex justify-center pt-10">
-          <CardShowCase/>
+        <div className="flex justify-center pt-10 flex-wrap gap-3">
+          <CardShowCase full={true}/>
+          <CardShowCase full={true}/>
+          <CardShowCase full={true}/>
+          <CardShowCase full={true}/>
+          <CardShowCase full={true}/>
         </div>
       </div>
       <div className='footer pt-16'>
-        <Footer fix={true}/>
+        <Footer fix={0}/>
       </div>
     </div>
   )
