@@ -4,11 +4,11 @@ import lepy from "../assets/lepy.png";
 export default function CardActivities() {
   return (
     <div className="px-2 py-2">
-      <div className="w-64 h-32">
+      <div className="w-64 h-44 overflow-hidden">
         <img
           src={lepy}
           alt="a"
-          className="w-full h-full "
+          className="w-full h-full object-cover "
         />
       </div>
       <div className="w-64 px-2">
