@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Showcase from './pages/Showcase';
 import Articles from './pages/Articles';
 import Activities from './pages/Activities';
+import About from './pages/About';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path='/showcase' element={<Showcase/>}/>
         <Route path='/activities' element={<Activities/>}/>
         <Route path='/articles' element={<Articles/>}/>
+        <Route path='/about' element={<About/>}/>
       </Routes>
     </BrowserRouter>
   );
