@@ -19,8 +19,10 @@ export default function Articles() {
       </div>
       <div>
         <PageTitle what={"Articles"}/>
-        <div className="flex justify-center pt-10">
-          <CardArticles/>
+        <div className="flex justify-center pt-10 gap-3">
+          <CardArticles full={true}/>
+          <CardArticles full={true}/>
+          <CardArticles full={true}/>
         </div>
       </div>
       <div className='footer pt-16'>
