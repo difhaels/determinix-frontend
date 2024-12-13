@@ -4,7 +4,7 @@ import "../css/output.css"
 
 export default function CardArticles({full}) {
   return (
-    <div className={`px-2 py-2 ${full?"px-3 py-6 shadow-lg":"flex"}`}>
+    <div className={`bg-white px-2 py-2 ${full?"px-3 pt-3 pb-6 shadow-lg":"flex"}`}>
       <div className="w-64 h-32">
         <img
           src={lepy}

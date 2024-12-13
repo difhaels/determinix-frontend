@@ -17,16 +17,19 @@ export default function Articles() {
       <div className="navbar">
         <Navbar isScrolled={isScrolled}/>
       </div>
-      <div>
+      <div className='bg-gradient-to-b from-yellow-500 to-white'>
         <PageTitle what={"Articles"}/>
-        <div className="flex justify-center pt-10 gap-3">
+        <div className="flex justify-center pt-10 gap-3 flex-wrap">
+          <CardArticles full={true}/>
+          <CardArticles full={true}/>
+          <CardArticles full={true}/>
           <CardArticles full={true}/>
           <CardArticles full={true}/>
           <CardArticles full={true}/>
         </div>
       </div>
       <div className='footer pt-16'>
-        <Footer fix={true}/>
+        <Footer fix={false}/>
       </div>
     </div>
   )
