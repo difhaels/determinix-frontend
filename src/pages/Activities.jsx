@@ -17,14 +17,18 @@ export default function Activities() {
       <div className="navbar">
         <Navbar isScrolled={isScrolled}/>
       </div>
-      <div>
+      <div className='bg-gradient-to-b from-teal-500 to-white'>
         <PageTitle what={"Activities"}/>
-        <div className="flex justify-center pt-10">
-          <CardActivities/>
+        <div className="flex justify-center pt-10 flex-wrap gap-3">
+          <CardActivities full={1}/>
+          <CardActivities full={1}/>
+          <CardActivities full={1}/>
+          <CardActivities full={1}/>
+          <CardActivities full={1}/>
         </div>
       </div>
       <div className='footer pt-16'>
-        <Footer fix={true}/>
+        <Footer fix={0}/>
       </div>
     </div>
   )

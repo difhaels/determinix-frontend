@@ -1,9 +1,9 @@
 import React from "react";
 import lepy from "../assets/lepy.png";
 
-export default function CardActivities() {
+export default function CardActivities({full}) {
   return (
-    <div className="px-2 py-2">
+    <div className={`bg-white px-2 py-2 ${full?"p-4 shadow-lg flex":""}`}>
       <div className="w-64 h-44 overflow-hidden">
         <img
           src={lepy}
