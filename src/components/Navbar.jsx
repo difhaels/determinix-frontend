@@ -13,7 +13,7 @@ export default function Navbar({ isScrolled }) {
   ];
 
   return (
-    <nav className={`top-0 h-[4rem] w-full flex justify-between fixed z-[2] py-0 px-16 items-center ${isScrolled ? "bg-white" : ""}`}>
+    <nav className={`top-0 h-[4rem] w-full flex justify-between fixed z-[2] py-0 px-16 items-center ${isScrolled ? "bg-white  shadow-sm" : ""}`}>
       <div className="flex h-10">
         <img src={dxlogo} alt="dxlogo"/>
       </div>
@@ -21,15 +21,15 @@ export default function Navbar({ isScrolled }) {
         <ul className="flex justify-between items-center gap-20">
           {links.map(({ name, link }) => {
             return (
-              <li key={name}>
+              <li key={name} className="hover:text-red-700 hover:scale-105">
                 <Link to={link}>{name}</Link>
               </li>
             );
           })}
         </ul>
       </div>
-      <div>
-        Sign in
+      <div className="bg-red-600 text-white px-2 py-1 rounded-sm cursor-pointer hover:scale-105">
+        Login
       </div>
     </nav>
   );
