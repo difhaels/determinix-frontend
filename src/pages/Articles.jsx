@@ -24,7 +24,7 @@ export default function Articles() {
         </div>
       </div>
       <div className='footer pt-16'>
-        <Footer />
+        <Footer fix={true}/>
       </div>
     </div>
   )
