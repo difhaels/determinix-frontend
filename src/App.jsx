@@ -6,6 +6,8 @@ import Articles from './pages/Articles';
 import Activities from './pages/Activities';
 import About from './pages/About';
 
+import ShowcaseDetail from './pages/ShowcaseDetail';
+
 function App() {
   return (
     <BrowserRouter>
@@ -15,6 +17,8 @@ function App() {
         <Route path='/activities' element={<Activities/>}/>
         <Route path='/articles' element={<Articles/>}/>
         <Route path='/about' element={<About/>}/>
+
+        <Route path="/showcase/:id" element={<ShowcaseDetail />} />
       </Routes>
     </BrowserRouter>
   );

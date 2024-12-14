@@ -54,7 +54,7 @@ export default function Showcase() {
         <PageTitle what={"Showcase"} />
         <div className="flex justify-center pt-10 flex-wrap gap-3">
           {projects.map((project) => {
-            return <CardShowCase id={project.id} title={project.title} date={project.date} members={project.members} full={true} />;
+            return <CardShowCase key={project.id} id={project.id} title={project.title} date={project.date} members={project.members} full={true} />;
           })}
         </div>
       </div>

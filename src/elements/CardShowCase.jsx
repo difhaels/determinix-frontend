@@ -1,12 +1,13 @@
 import React from "react";
 import lepy from "../assets/lepy.png";
 import { EllipsisHorizontalIcon } from "@heroicons/react/20/solid";
+import { Link } from "react-router-dom";
 export default function CardShowCase({id, title, date, members, full}) {
   
-  const participant = members.slice(0, 3)
-
+  const participant = members ? members.slice(0, 3) : [];
+  
   return (
-    <div className={`bg-white px-2 py-2 ${full?"px-3 pt-3 pb-6 shadow-lg hover:scale-105 cursor-pointer transition":""}`}>
+    <Link to={`/showcase/${id}`} className={`bg-white px-2 py-2 ${full?"px-3 pt-3 pb-6 shadow-lg hover:scale-105 cursor-pointer transition":""}`}>
       <div className="w-64 h-44 overflow-hidden">
         <img
           src={lepy}
@@ -20,7 +21,7 @@ export default function CardShowCase({id, title, date, members, full}) {
         <div className="flex gap-1 pt-1">
           {participant.map((member) => {
             return (
-              <div className="bg-sky-400 px-1 py-[1px] rounded-md border-2 border-sky-600 text-sky-700 text-xs">
+              <div key={member} className="bg-sky-400 px-1 py-[1px] rounded-md border-2 border-sky-600 text-sky-700 text-xs">
                 {member}
               </div>
             );
@@ -30,6 +31,6 @@ export default function CardShowCase({id, title, date, members, full}) {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
