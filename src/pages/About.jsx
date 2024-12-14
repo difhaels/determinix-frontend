@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/output.css";
 
 import Navbar from "../components/Navbar";
@@ -9,6 +9,11 @@ import CardMember from '../components/CardMember'
 
 export default function About() {
   const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   window.onscroll = () => {
     setIsScrolled(window.scrollY === 0 ? false : true);
     return () => (window.onscroll = null);

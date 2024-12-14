@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "../css/output.css"
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -10,6 +10,11 @@ import Activities from '../components/Activities'
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   window.onscroll = () => {
     setIsScrolled(window.scrollY === 0 ? false: true);
     return () => (window.onscroll = null)

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import dxt1 from "../assets/dxt1.jpeg";
 import dxt2 from "../assets/dxt2.jpeg";
+import { Link } from "react-router-dom";
 
 export default function About() {
   const [test, setTest] = useState(0);
@@ -20,15 +21,15 @@ export default function About() {
         society.
       </h1>
       <div className="flex justify-center mt-5">
-        <button
+        <Link to={"/about"}
           onClick={() => {
             setTest(test + 1);
             console.log(test + 1);
           }}
           className="bg-red-500 text-white px-4 py-2 rounded-sm hover:bg-red-400"
         >
-          Click For Nothing
-        </button>
+          Learn More
+        </Link>
       </div>
       <div className="flex justify-center gap-5 mt-5">
         {dxt.map(({ img, alt }) => {

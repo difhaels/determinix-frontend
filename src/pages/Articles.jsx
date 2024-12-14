@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "../css/output.css"
 
 import Navbar from '../components/Navbar'
@@ -8,6 +8,11 @@ import CardArticles from '../elements/CardArticles'
 
 export default function Articles() {
   const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   window.onscroll = () => {
     setIsScrolled(window.scrollY === 0 ? false: true);
     return () => (window.onscroll = null)
@@ -17,7 +22,7 @@ export default function Articles() {
       <div className="navbar">
         <Navbar isScrolled={isScrolled}/>
       </div>
-      <div className='bg-gradient-to-b from-yellow-500 to-white'>
+      <div className='bg-gradient-to-b from-yellow-300 to-white'>
         <PageTitle what={"Articles"}/>
         <div className="flex justify-center pt-10 gap-3 flex-wrap">
           <CardArticles full={true}/>
