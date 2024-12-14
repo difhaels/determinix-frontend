@@ -1,8 +1,9 @@
 import React from "react";
 import lepy from "../assets/lepy.png";
 import { EllipsisHorizontalIcon } from "@heroicons/react/20/solid";
-export default function CardShowCase({full}) {
-  const nama = ["agung", "salsabil"];
+export default function CardShowCase({id, title, date, members, full}) {
+  
+  const participant = members.slice(0, 3)
 
   return (
     <div className={`bg-white px-2 py-2 ${full?"px-3 pt-3 pb-6 shadow-lg hover:scale-105 cursor-pointer transition":""}`}>
@@ -14,13 +15,13 @@ export default function CardShowCase({full}) {
         />
       </div>
       <div className="px-2">
-        <h1 className="text-base">Showcase 01</h1>
-        <h1 className="text-sm text-slate-600">21-01-2024</h1>
+        <h1 className="text-base">{title}</h1>
+        <h1 className="text-sm text-slate-600">{date}</h1>
         <div className="flex gap-1 pt-1">
-          {nama.map((n) => {
+          {participant.map((member) => {
             return (
               <div className="bg-sky-400 px-1 py-[1px] rounded-md border-2 border-sky-600 text-sky-700 text-xs">
-                {n}
+                {member}
               </div>
             );
           })}
