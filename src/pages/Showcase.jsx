@@ -5,17 +5,17 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import PageTitle from "../elements/PageTilte";
 import CardShowCase from "../elements/CardShowCase";
-import Popup from "../test/Pop";
 
 import { projects } from "../test/constant";
 
 export default function Showcase() {
 
   const [isScrolled, setIsScrolled] = useState(false);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const [showDetail, setShowDetail] = useState(false);
 
   window.onscroll = () => {
     setIsScrolled(window.scrollY === 0 ? false : true);
@@ -34,7 +34,6 @@ export default function Showcase() {
           })}
         </div>
       </div>
-      <Popup/>
       <div className="footer pt-16">
         <Footer fix={0} />
       </div>

@@ -6,7 +6,7 @@ import Articles from './pages/Articles';
 import Activities from './pages/Activities';
 import About from './pages/About';
 
-import ShowcaseDetail from './pages/ShowcaseDetail';
+import ShowcaseDetail from './components/ShowcaseDetail';
 
 function App() {
   return (
