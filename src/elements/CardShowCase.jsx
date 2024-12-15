@@ -1,8 +1,8 @@
 import React from "react";
-import lepy from "../assets/lepy.png";
 import { EllipsisHorizontalIcon } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
-export default function CardShowCase({id, title, date, members, full}) {
+
+export default function CardShowCase({id, title, date, members, img, full}) {
   
   const participant = members ? members.slice(0, 3) : [];
   
@@ -10,8 +10,8 @@ export default function CardShowCase({id, title, date, members, full}) {
     <Link to={`/showcase/${id}`} className={`bg-white px-2 py-2 ${full?"px-3 pt-3 pb-6 shadow-lg hover:scale-105 cursor-pointer transition":""}`}>
       <div className="w-64 h-44 overflow-hidden">
         <img
-          src={lepy}
-          alt="a"
+          src={img}
+          alt={title}
           className="w-full h-full object-cover rounded-sm"
         />
       </div>
