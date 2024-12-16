@@ -27,7 +27,7 @@ export default function About() {
             setTest(test + 1);
             console.log(test + 1);
           }}
-          className="bg-red-500 text-white px-4 py-2 rounded-sm hover:bg-red-400"
+          className="bg-red-500 text-white px-4 py-2 rounded-sm hover:bg-red-400 hover:scale-105"
         >
           Learn More
         </Link>

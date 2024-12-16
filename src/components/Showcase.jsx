@@ -7,12 +7,13 @@ import More from "../elements/More";
 import { projects } from "../test/constant";
 
 export default function Showcase() {
+  const project = projects ? projects.slice(0, 3) : [];
   return (
     <div>
       <Divider />
       <Title what={"Showcase"} />
       <div className="flex justify-center py-10 flex-wrap gap-3">
-        {projects.map((project) => {
+        {project.map((project) => {
           return (
             <CardShowCase
               key={project.id}
