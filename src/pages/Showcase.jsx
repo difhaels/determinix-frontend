@@ -15,8 +15,6 @@ export default function Showcase() {
     window.scrollTo(0, 0);
   }, []);
 
-  const [showDetail, setShowDetail] = useState(false);
-
   window.onscroll = () => {
     setIsScrolled(window.scrollY === 0 ? false : true);
     return () => (window.onscroll = null);
