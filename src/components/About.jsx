@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import dxt1 from "../assets/dxt1.jpeg";
 import dxt2 from "../assets/dxt2.jpeg";
+import dxt4 from "../assets/dxt4.jpg";
 import { Link } from "react-router-dom";
 
 export default function About() {
@@ -8,7 +9,7 @@ export default function About() {
   const dxt = [
     { img: dxt2, alt: "dx2" },
     { img: dxt1, alt: "dx1" },
-    { img: dxt2, alt: "dx3" },
+    { img: dxt4, alt: "dx4" },
   ];
   return (
     <div className="px-16">

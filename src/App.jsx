@@ -7,12 +7,16 @@ import Activities from './pages/Activities';
 import About from './pages/About';
 
 import ShowcaseDetail from './components/ShowcaseDetail';
+import Login from './pages/Login';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home/>}/>
+        
+        <Route path='/login' element={<Login/>}/>
+
         <Route path='/showcase' element={<Showcase/>}/>
         <Route path='/activities' element={<Activities/>}/>
         <Route path='/articles' element={<Articles/>}/>

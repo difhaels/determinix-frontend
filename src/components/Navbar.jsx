@@ -28,9 +28,9 @@ export default function Navbar({ isScrolled }) {
           })}
         </ul>
       </div>
-      <div className="bg-red-600 text-white px-2 py-1 rounded-sm cursor-pointer hover:scale-105">
+      <Link to={'/login'} className="bg-red-600 text-white px-2 py-1 rounded-sm cursor-pointer hover:scale-105">
         Login
-      </div>
+      </Link>
     </nav>
   );
 }
