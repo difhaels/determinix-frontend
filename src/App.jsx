@@ -11,6 +11,7 @@ import About from './pages/About';
 
 import ShowcaseDetail from './components/ShowcaseDetail';
 import ActivityDetail from './components/ActivityDetail';
+import ArticleDetail from './components/ArticleDetail';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
 
         <Route path="/showcase/:id" element={<ShowcaseDetail />} />
         <Route path="/activity/:id" element={<ActivityDetail />} />
+        <Route path="/article/:id" element={<ArticleDetail />} />
       </Routes>
     </BrowserRouter>
   );

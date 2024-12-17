@@ -19,7 +19,7 @@ export default function CardArticles({id, writer, date, title, type, short, img 
         <h1 className="text-base font-medium">{title}</h1>
         {full?<h1 className="text-sm text-slate-600">{writer}</h1>:""}
         <h1>{short}</h1>
-        <Link to={`/showcase/${id}`} className="text-sm text-sky-500">Read More</Link>
+        <Link to={`/article/${id}`} className="text-sm text-sky-500 hover:text-sky-300">Read More</Link>
       </div>
     </div>
   );

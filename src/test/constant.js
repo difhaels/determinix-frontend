@@ -86,7 +86,7 @@ export const articles = [
     img:"/assets/lepy.png"
   },
   {
-    id: 800002,
+    id: 800019,
     writer: 'Wisnu H',
     date: 'May 18, 2023',
     title: 'Articles 02',
@@ -113,7 +113,7 @@ export const articles = [
     img:"/assets/lepy.png"
   },
   {
-    id: 800002,
+    id: 800005,
     writer: 'Beni',
     date: 'May 18, 2023',
     title: 'Articles 04',
@@ -122,7 +122,7 @@ export const articles = [
     img:"/assets/lepy.png"
   },
   {
-    id: 800004,
+    id: 800006,
     writer: 'Tubagus',
     date: 'May 18, 2023',
     title: 'Articles 05',
