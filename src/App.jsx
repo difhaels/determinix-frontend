@@ -1,5 +1,8 @@
 import React from 'react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
+
+import Login from './pages/Login';
+
 import Home from './pages/Home';
 import Showcase from './pages/Showcase';
 import Articles from './pages/Articles';
@@ -7,7 +10,7 @@ import Activities from './pages/Activities';
 import About from './pages/About';
 
 import ShowcaseDetail from './components/ShowcaseDetail';
-import Login from './pages/Login';
+import ActivityDetail from './components/ActivityDetail';
 
 function App() {
   return (
@@ -23,6 +26,7 @@ function App() {
         <Route path='/about' element={<About/>}/>
 
         <Route path="/showcase/:id" element={<ShowcaseDetail />} />
+        <Route path="/activity/:id" element={<ActivityDetail />} />
       </Routes>
     </BrowserRouter>
   );

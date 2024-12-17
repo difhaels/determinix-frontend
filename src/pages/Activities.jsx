@@ -28,7 +28,7 @@ export default function Activities() {
         <PageTitle what={"Activities"}/>
         <div className="flex justify-center pt-10 flex-wrap gap-3">
           {activities.map((activity) => {
-            return <CardActivities id={activity.id} date={activity.date} img={activity.img}  full={true} />
+            return <CardActivities key={activity.id} id={activity.id} date={activity.date} img={activity.img}  full={true} />
           })}
         </div>
       </div>
