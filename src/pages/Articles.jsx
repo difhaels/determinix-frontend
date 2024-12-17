@@ -6,6 +6,8 @@ import Footer from '../components/Footer'
 import PageTitle from '../elements/PageTilte'
 import CardArticles from '../elements/CardArticles'
 
+import { articles } from '../test/constant'
+
 export default function Articles() {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -25,12 +27,7 @@ export default function Articles() {
       <div className='bg-gradient-to-b from-yellow-300 to-white'>
         <PageTitle what={"Articles"}/>
         <div className="flex justify-center pt-10 gap-3 flex-wrap">
-          <CardArticles full={true}/>
-          <CardArticles full={true}/>
-          <CardArticles full={true}/>
-          <CardArticles full={true}/>
-          <CardArticles full={true}/>
-          <CardArticles full={true}/>
+          {articles.map(article => <CardArticles id={article.id} writer={article.writer} date={article.date} title={article.title} type={article.type} short={article.short} img={article.img} full={true}/>)}
         </div>
       </div>
       <div className='footer pt-16'>

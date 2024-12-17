@@ -78,6 +78,7 @@ export const activities = [
 export const articles = [
   {
     id: 800001,
+    writer: 'Agung Saputra',
     date: 'May 18, 2023',
     title: 'Articles 01',
     type: 'GENERAL',
@@ -86,6 +87,7 @@ export const articles = [
   },
   {
     id: 800002,
+    writer: 'Wisnu H',
     date: 'May 18, 2023',
     title: 'Articles 02',
     type: 'GENERAL',
@@ -94,6 +96,7 @@ export const articles = [
   },
   {
     id: 800002,
+    writer: 'Aru C',
     date: 'May 18, 2023',
     title: 'Articles 03',
     type: 'GENERAL',
@@ -102,8 +105,27 @@ export const articles = [
   },
   {
     id: 800004,
+    writer: 'Salsabil A',
     date: 'May 18, 2023',
     title: 'Articles 04',
+    type: 'GENERAL',
+    short: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem a voluptas, dicta ex reprehenderit ullam?',
+    img:"/assets/lepy.png"
+  },
+  {
+    id: 800002,
+    writer: 'Beni',
+    date: 'May 18, 2023',
+    title: 'Articles 04',
+    type: 'GENERAL',
+    short: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem a voluptas, dicta ex reprehenderit ullam?',
+    img:"/assets/lepy.png"
+  },
+  {
+    id: 800004,
+    writer: 'Tubagus',
+    date: 'May 18, 2023',
+    title: 'Articles 05',
     type: 'GENERAL',
     short: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem a voluptas, dicta ex reprehenderit ullam?',
     img:"/assets/lepy.png"
