@@ -6,6 +6,8 @@ import Footer from '../components/Footer'
 import PageTitle from '../elements/PageTilte'
 import CardActivities from '../elements/CardActivities'
 
+import { activities } from '../test/constant'
+
 export default function Activities() {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -25,11 +27,9 @@ export default function Activities() {
       <div className='bg-gradient-to-b from-teal-300 to-white'>
         <PageTitle what={"Activities"}/>
         <div className="flex justify-center pt-10 flex-wrap gap-3">
-          <CardActivities full={1}/>
-          <CardActivities full={1}/>
-          <CardActivities full={1}/>
-          <CardActivities full={1}/>
-          <CardActivities full={1}/>
+          {activities.map((activity) => {
+            return <CardActivities id={activity.id} date={activity.date} img={activity.img}  full={true} />
+          })}
         </div>
       </div>
       <div className='footer pt-16'>

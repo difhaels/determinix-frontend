@@ -714,6 +714,11 @@ video {
   width: 100%;
 }
 
+.w-fit {
+  width: -webkit-fit-content;
+  width: fit-content;
+}
+
 .max-w-6xl {
   max-width: 72rem;
 }
@@ -1217,6 +1222,11 @@ video {
 .hover\:px-2:hover {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+.hover\:px-1:hover {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }
 
 .hover\:text-red-700:hover {
