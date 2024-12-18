@@ -1,7 +1,6 @@
 import React from "react";
 import "../css/output.css"
 import { Link } from "react-router-dom";
-import { articles } from "../test/constant";
 
 export default function CardArticles({id, writer, date, title, type, short, img ,full}) {
   return (
@@ -9,7 +8,7 @@ export default function CardArticles({id, writer, date, title, type, short, img 
       <div className="w-64 h-32">
         <img
           src={img}
-          alt="a"
+          alt={title}
           className="w-full h-full "
         />
       </div>

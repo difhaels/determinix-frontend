@@ -28,7 +28,8 @@ export default function Articles() {
         <PageTitle what={"Articles"} />
         <div className="flex justify-center pt-10 gap-3 flex-wrap">
           {articles.map((article) => (
-            <CardArticles key={article.id}
+            <CardArticles
+              key={article.id}
               id={article.id}
               writer={article.writer}
               date={article.date}
