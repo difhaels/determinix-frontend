@@ -25,7 +25,7 @@ export default function Home() {
         <Navbar isScrolled={isScrolled}/>
       </div>
       <div className='flex flex-wrap gap-5'>
-        <div className="about w-full pt-36 bg-gradient-to-b from-rose-300">
+        <div className="about w-full pt-24 lg:pt-36 bg-gradient-to-b from-rose-300">
           <About />
         </div>
         <div className="showcase w-full pt-16">
