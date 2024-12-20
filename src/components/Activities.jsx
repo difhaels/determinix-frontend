@@ -13,7 +13,7 @@ export default function Activities() {
     <div>
       <Divider />
       <Title what={"Activities"} />
-      <div className="flex justify-center py-5">
+      <div className="flex flex-wrap justify-center py-5">
         {activitiy.map((activity) => {
           return (
             <CardActivities
