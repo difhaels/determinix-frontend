@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 export default function CardArticles({id, writer, date, title, type, short, img ,full}) {
   return (
-    <div className={`bg-white px-2 py-2 ${full?"px-3 pt-3 pb-6 shadow-lg":"flex"}`}>
-      <div className="w-64 h-32">
+    <div className={`bg-white px-2 py-2 ${full?"px-3 pt-3 pb-6 shadow-lg":"lg:flex"}`}>
+      <div className="lg:w-64 w-72 h-32">
         <img
           src={img}
           alt={title}
