@@ -8,7 +8,7 @@ export default function CardShowCase({id, title, date, members, img, full}) {
   
   return (
     <Link to={`/showcase/${id}`} className={`bg-white px-2 py-2 ${full?"px-3 pt-3 pb-6 shadow-lg hover:scale-105 cursor-pointer transition":""}`}>
-      <div className="w-64 h-44 overflow-hidden">
+      <div className="w-72 h-48 overflow-hidden">
         <img
           src={img}
           alt={title}
