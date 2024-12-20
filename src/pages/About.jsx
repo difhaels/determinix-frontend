@@ -21,13 +21,13 @@ export default function About() {
 
   const members = [
     {name: "Agung Saputra", j:"The Strongest",att: 1},
-    {name: "Aru Chevy Rasyid", j:"Not Set",att: 0},
-    {name: "Beni Maryana", j:"Not Set",att: 0},
-    {name: "Chandra Hadi Ramadhan", j:"Not Set",att: 0},
-    {name: "Dian Rivanno", j:"Not Set",att: 0},
-    {name: "Krisna Setyo Ramadhan", j:"Not Set",att: 0},
-    {name: "Salsabil Albi Fahri", j:"Not Set",att: 0},
-    {name: "Wisnu Hartono", j:"Not Set",att: 0},
+    {name: "A** C** R**", j:"Not Set",att: 0},
+    {name: "B** M**", j:"Not Set",att: 0},
+    {name: "C** H** R**", j:"Not Set",att: 0},
+    {name: "D** R**", j:"Not Set",att: 0},
+    {name: "K** S** R**", j:"Not Set",att: 0},
+    {name: "S** A** F**", j:"Not Set",att: 0},
+    {name: "W** H**", j:"Not Set",att: 0},
   ]
   return (
     <div>
@@ -36,8 +36,8 @@ export default function About() {
       </div>
       <div className="bg-gradient-to-b from-rose-200 to-white">
         <PageTitle what={"About"} />
-        <div className="flex justify-center pt-5">
-          <h1 className="px-[20rem] text-justify">
+        <div className="flex justify-center pt-7">
+          <h1 className="lg:px-[20rem] px-6 text-justify">
             <span className="font-bold text-xl italic">
               DETERMINI<span className="text-red-600">X </span>
             </span>
@@ -54,9 +54,9 @@ export default function About() {
             velit, provident culpa et, quis a possimus suscipit quibusdam!
           </h1>
         </div>
-        <div className="px-[20rem]">
+        <div className="lg:px-[20rem] px-6">
           <h1 className="font-semibold italic pt-4 pb-2">Member</h1>
-          <div className="grid grid-cols-3 justify-center gap-3">
+          <div className="lg:grid lg:grid-cols-3 justify-center gap-3">
             {members.map((member) => {
               return <CardMember name={member.name} j={member.j} att={member.att}/>
             })}

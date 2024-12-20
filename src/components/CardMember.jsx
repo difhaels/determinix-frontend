@@ -4,7 +4,7 @@ import agung from "../assets/agung.jpeg";
 
 export default function CardMember({ name, j, att }) {
   return (
-    <div className="grid grid-cols-2 justify-center items-center bg-white w-64 px-4 py-3 shadow-md hover:scale-105 cursor-pointer transition">
+    <div className="grid grid-cols-2 justify-center items-center bg-white w-full px-4 py-3 shadow-md hover:scale-105 cursor-pointer transition lg:mb-0 mb-1">
       {att ? (
         <div className="w-20 h-20">
           <img src={agung} alt={name} className="rounded-full" />
