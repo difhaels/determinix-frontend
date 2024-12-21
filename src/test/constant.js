@@ -131,3 +131,14 @@ export const articles = [
     img:"/assets/lepy.png"
   },
 ]
+
+export const members = [
+    {id: 8818, name: "Agung Saputra", j:"The Strongest",att: 1},
+    {id: 2, name: "A** C** R**", j:"Not Set",att: 0},
+    {id: 3, name: "B** M**", j:"Not Set",att: 0},
+    {id: 4, name: "C** H** R**", j:"Not Set",att: 0},
+    {id: 5, name: "D** R**", j:"Not Set",att: 0},
+    {id: 6, name: "K** S** R**", j:"Not Set",att: 0},
+    {id: 7, name: "S** A** F**", j:"Not Set",att: 0},
+    {id: 8, name: "W** H**", j:"Not Set",att: 0},
+  ]

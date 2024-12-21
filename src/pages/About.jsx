@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import PageTitle from "../elements/PageTilte";
 
 import CardMember from '../components/CardMember'
+import { members } from "../test/constant";
 
 export default function About() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,16 +20,6 @@ export default function About() {
     return () => (window.onscroll = null);
   };
 
-  const members = [
-    {name: "Agung Saputra", j:"The Strongest",att: 1},
-    {name: "A** C** R**", j:"Not Set",att: 0},
-    {name: "B** M**", j:"Not Set",att: 0},
-    {name: "C** H** R**", j:"Not Set",att: 0},
-    {name: "D** R**", j:"Not Set",att: 0},
-    {name: "K** S** R**", j:"Not Set",att: 0},
-    {name: "S** A** F**", j:"Not Set",att: 0},
-    {name: "W** H**", j:"Not Set",att: 0},
-  ]
   return (
     <div>
       <div className="navbar">
@@ -58,7 +49,7 @@ export default function About() {
           <h1 className="font-semibold italic pt-4 pb-2">Member</h1>
           <div className="lg:grid lg:grid-cols-3 justify-center gap-3">
             {members.map((member) => {
-              return <CardMember name={member.name} j={member.j} att={member.att}/>
+              return <CardMember id={member.id} name={member.name} j={member.j} att={member.att}/>
             })}
           </div>
         </div>
