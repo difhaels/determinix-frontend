@@ -21,12 +21,12 @@ export default function CardShowCase({id, title, date, members, img, full}) {
         <div className="flex gap-1 pt-1">
           {participant.map((member) => {
             return (
-              <div key={member} className="bg-sky-400 px-1 py-[1px] rounded-md border-2 border-sky-600 text-sky-700 text-xs">
+              <div key={member} className="bg-rose-500 px-1 py-[1px] rounded-md border-2 border-rose-800 text-slate-200 text-xs">
                 {member}
               </div>
             );
           })}
-          <div className="bg-sky-400 px-1 py-[1px] rounded-md border-2 border-sky-600 text-sky-700 text-xs">
+          <div className="bg-rose-500 px-1 py-[1px] rounded-md border-2 border-rose-800 text-slate-200 text-xs">
             <EllipsisHorizontalIcon className="w-4" />
           </div>
         </div>
