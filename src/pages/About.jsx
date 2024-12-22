@@ -49,7 +49,7 @@ export default function About() {
           <h1 className="font-semibold italic pt-4 pb-2">Member</h1>
           <div className="lg:grid lg:grid-cols-3 justify-center gap-3">
             {members.map((member) => {
-              return <CardMember id={member.id} name={member.name} j={member.j} att={member.att}/>
+              return <CardMember id={member.id} name={member.name} j={member.j} img={member.img}/>
             })}
           </div>
         </div>

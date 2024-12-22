@@ -1,14 +1,13 @@
 import React from "react";
 
-import agung from "../assets/agung.jpeg";
 import { Link } from "react-router-dom";
 
-export default function CardMember({ id, name, j, att }) {
+export default function CardMember({ id, name, j, img }) {
   return (
     <Link to={`/member/${id}`} className="grid grid-cols-2 justify-center items-center bg-white w-full px-4 py-3 shadow-md hover:scale-105 cursor-pointer transition lg:mb-0 mb-1">
-      {att ? (
+      {img ? (
         <div className="w-20 h-20">
-          <img src={agung} alt={name} className="rounded-full" />
+          <img src={img} alt={name} className="rounded-full" />
         </div>
       ) : (
         <div className="w-20 h-20 rounded-full bg-slate-200 flex justify-center items-center">
