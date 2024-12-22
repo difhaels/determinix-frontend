@@ -1,18 +1,28 @@
 import React from "react";
-import { members } from "../test/constant";
+import { activities, articles, members, projects } from "../test/constant";
 import { useParams } from "react-router-dom";
 import { ChevronLeftIcon } from "@heroicons/react/20/solid";
-import Showcase from "./Showcase";
-import Activities from "./Activities";
-import Articles from "./Articles";
+
 import TitleMember from "../elements/TitleMember";
+
+import CardShowCase from "../elements/CardShowCase";
+import CardActivities from "../elements/CardActivities";
+import CardArticles from "../elements/CardArticles";
+
+import More from "../elements/More";
+import Footer from "./Footer";
 
 export default function MemberDetail() {
   const { id } = useParams();
   const member = members.find((item) => item.id === parseInt(id));
+
+  const project = projects ? projects.slice(0, 3) : [];
+  const activitiy = activities.slice(0, 3);
+  const article = articles.slice(0, 3);
+
   return (
     <div>
-      <div className="bg-gray-900 lg:pt-10 lg:px-20 pt-5 px-4">
+      <div className="bg-gray-900 lg:pt-10 lg:px-60 pt-5 px-10">
         <div className="w-fit flex items-center text-slate-100 hover:text-slate-300 cursor-pointer hover:scale-105">
           <ChevronLeftIcon className="w-8 lg:w-10" />
           <h1>Back</h1>
@@ -73,17 +83,67 @@ export default function MemberDetail() {
           </a>
         </div>
       </div>
-      <div className="showcase w-full pt-16">
-        <TitleMember what={"ShowCase"}/>
-        <Showcase />
+
+      <div className="w-full pt-16">
+        <TitleMember what={"Showcase"} />
+        <div className="flex justify-center py-10 flex-wrap gap-3">
+          {project.map((project) => {
+            return (
+              <CardShowCase
+                key={project.id}
+                id={project.id}
+                title={project.title}
+                date={project.date}
+                members={project.members}
+                img={project.img}
+                full={true}
+              />
+            );
+          })}
+        </div>
+        <More what={"Showcase by " + member.name} where={"showcase"} />
       </div>
-      <div className="activities w-full pt-16">
-      <TitleMember what={"Activities"}/>
-        <Activities />
+
+      <div className="w-full pt-16">
+        <TitleMember what={"Activities"} />
+        <div className="flex flex-wrap justify-center py-5">
+          {activitiy.map((activity) => {
+            return (
+              <CardActivities
+                id={activity.id}
+                date={activity.date}
+                img={activity.img}
+                full={false}
+              />
+            );
+          })}
+        </div>
+        <More what={"Activities by " + member.name} where={"activities"} />
       </div>
+
       <div className="articles w-full pt-16">
-      <TitleMember what={"Articles"}/>
-        <Articles />
+        <TitleMember what={"Articles"} />
+        <div className="flex flex-wrap justify-center gap-3 py-5">
+          {article.map((article) => {
+            return (
+              <CardArticles
+                full={1}
+                id={article.id}
+                writer={article.writer}
+                date={article.date}
+                title={article.title}
+                type={article.type}
+                short={article.short}
+                img={article.img}
+              />
+            );
+          })}
+        </div>
+        <More what={"Articles by " + member.name} where={"articles"} />
+      </div>
+
+      <div className="footer pt-16">
+        <Footer fix={0} />
       </div>
     </div>
   );
