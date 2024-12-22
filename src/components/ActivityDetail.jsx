@@ -5,6 +5,7 @@ import { XMarkIcon } from "@heroicons/react/24/solid";
 
 import { activities } from "../test/constant";
 import Up from "../elements/Up";
+import Footer from "./Footer";
 
 export default function ActivityDetail() {
   const navigate = useNavigate();
@@ -12,7 +13,10 @@ export default function ActivityDetail() {
   const activity = activities.find((item) => item.id === parseInt(id));
   const scrollRef = useRef();
   return (
-    <div ref={scrollRef} className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70  overflow-auto">
+    <div
+      ref={scrollRef}
+      className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70  overflow-auto"
+    >
       <div className="max-h-[90vh] w-full max-w-6xl px-6 rounded-md scroll">
         <div className="pb-3 flex items-end justify-between">
           <div>
@@ -62,6 +66,9 @@ export default function ActivityDetail() {
             facere suscipit facilis, fugit eius temporibus mollitia obcaecati
             officia, qui beatae.
           </h1>
+        </div>
+        <div className="footer pt-2">
+          <Footer fix={0} />
         </div>
       </div>
       <Up scrollRef={scrollRef} />

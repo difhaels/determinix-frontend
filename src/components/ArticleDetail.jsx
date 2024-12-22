@@ -5,6 +5,7 @@ import { XMarkIcon } from "@heroicons/react/24/solid";
 
 import { articles } from "../test/constant";
 import Up from "../elements/Up";
+import Footer from "./Footer";
 
 export default function ArticleDetail() {
   const navigate = useNavigate();
@@ -69,6 +70,9 @@ export default function ArticleDetail() {
             facere suscipit facilis, fugit eius temporibus mollitia obcaecati
             officia, qui beatae.
           </h1>
+        </div>
+        <div className="footer pt-2">
+          <Footer fix={0} />
         </div>
       </div>
       <Up scrollRef={scrollRef} />
