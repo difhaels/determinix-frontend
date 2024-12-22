@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { activities, articles, members, projects } from "../test/constant";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { ChevronLeftIcon } from "@heroicons/react/20/solid";
 
 import TitleMember from "../elements/TitleMember";
@@ -13,6 +13,11 @@ import More from "../elements/More";
 import Footer from "./Footer";
 
 export default function MemberDetail() {
+
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+
   const { id } = useParams();
   const member = members.find((item) => item.id === parseInt(id));
 
@@ -23,10 +28,10 @@ export default function MemberDetail() {
   return (
     <div>
       <div className="bg-gray-900 lg:pt-10 lg:px-60 pt-5 px-10">
-        <div className="w-fit flex items-center text-slate-100 hover:text-slate-300 cursor-pointer hover:scale-105">
+        <Link to={"/about"} className="w-fit flex items-center text-slate-100 hover:text-slate-300 cursor-pointer hover:scale-105">
           <ChevronLeftIcon className="w-8 lg:w-10" />
           <h1>Back</h1>
-        </div>
+        </Link>
         <div className="py-7 lg:py-10 flex items-end justify-between">
           <div className="flex items-end gap-4">
             <img

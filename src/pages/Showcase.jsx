@@ -10,10 +10,11 @@ import { projects } from "../test/constant";
 
 export default function Showcase() {
 
-  const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  
+  const [isScrolled, setIsScrolled] = useState(false);
 
   window.onscroll = () => {
     setIsScrolled(window.scrollY === 0 ? false : true);
