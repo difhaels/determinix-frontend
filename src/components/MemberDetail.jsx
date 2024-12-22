@@ -2,6 +2,10 @@ import React from "react";
 import { members } from "../test/constant";
 import { useParams } from "react-router-dom";
 import { ChevronLeftIcon } from "@heroicons/react/20/solid";
+import Showcase from "./Showcase";
+import Activities from "./Activities";
+import Articles from "./Articles";
+import TitleMember from "../elements/TitleMember";
 
 export default function MemberDetail() {
   const { id } = useParams();
@@ -21,7 +25,9 @@ export default function MemberDetail() {
               className="w-36 lg:w-40 rounded-b-xl rounded-e-xl"
             />
             <div>
-              <h1 className="text-slate-300 text-sm lg:text-lg">{member.name}</h1>
+              <h1 className="text-slate-300 text-sm lg:text-lg">
+                {member.name}
+              </h1>
               <h1 className="text-slate-100 text-lg lg:text-xl font-semibold">
                 {member.j}
               </h1>
@@ -66,6 +72,18 @@ export default function MemberDetail() {
             </svg>
           </a>
         </div>
+      </div>
+      <div className="showcase w-full pt-16">
+        <TitleMember what={"ShowCase"}/>
+        <Showcase />
+      </div>
+      <div className="activities w-full pt-16">
+      <TitleMember what={"Activities"}/>
+        <Activities />
+      </div>
+      <div className="articles w-full pt-16">
+      <TitleMember what={"Articles"}/>
+        <Articles />
       </div>
     </div>
   );
