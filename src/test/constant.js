@@ -74,6 +74,3 @@ export const articles = [
   },
 ];
 
-export const members = [
-
-];

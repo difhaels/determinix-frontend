@@ -2,12 +2,18 @@ import React from "react";
 import { EllipsisHorizontalIcon } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
 
-export default function CardShowCase({id, title, date, members, img, full}) {
-  
-  const participant = members ? members.slice(0, 3) : [];
+export default function CardShowCase({ id, title, date, members, img, full }) {
+  const participant = members ? members.slice(0, 3).map(member => member.split(" ")[0]) : [];
   
   return (
-    <Link to={`/showcase/${id}`} className={`bg-white px-2 py-2 ${full?"px-3 pt-3 pb-6 shadow-lg hover:scale-105 cursor-pointer transition":""}`}>
+    <Link
+      to={`/showcase/${id}`}
+      className={`bg-white px-2 py-2 ${
+        full
+          ? "px-3 pt-3 pb-6 shadow-lg hover:scale-105 cursor-pointer transition"
+          : ""
+      }`}
+    >
       <div className="w-72 h-48 overflow-hidden">
         <img
           src={img}

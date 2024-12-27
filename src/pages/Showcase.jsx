@@ -6,20 +6,27 @@ import Footer from "../components/Footer";
 import PageTitle from "../elements/PageTilte";
 import CardShowCase from "../elements/CardShowCase";
 
-import { projects } from "../test/constant";
-
 export default function Showcase() {
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
-  const [isScrolled, setIsScrolled] = useState(false);
 
+  const [isScrolled, setIsScrolled] = useState(false);
   window.onscroll = () => {
     setIsScrolled(window.scrollY === 0 ? false : true);
     return () => (window.onscroll = null);
   };
+
+  const [projects, setProjects] = useState([{}]);
+  // panggil project
+  useEffect(() => {
+    fetch("http://localhost:5000/projects")
+      .then((response) => response.json())
+      .then((data) => {
+        setProjects(data);
+      });
+  }, []);
+
   return (
     <div>
       <div className="navbar">
@@ -28,9 +35,27 @@ export default function Showcase() {
       <div className="bg-gradient-to-b from-sky-300 to-white">
         <PageTitle what={"Showcase"} />
         <div className="flex justify-center pt-10 flex-wrap gap-3">
-          {projects.map((project) => {
-            return <CardShowCase key={project.id} id={project.id} title={project.title} date={project.date} members={project.members} img={project.img} full={true} />;
-          })}
+          <div className="flex justify-center pt-10 flex-wrap gap-3">
+            {Array.isArray(projects) && projects.length > 0 ? (
+              projects.map((project, index) => (
+                <CardShowCase
+                  key={`${project._id}-${index}`}
+                  id={project._id}
+                  title={project.title}
+                  date={project.date}
+                  members={
+                    Array.isArray(project.members)
+                      ? project.members.map((member) => member.name)
+                      : []
+                  }
+                  img={project.img}
+                  full={true}
+                />
+              ))
+            ) : (
+              <p>Loading projects...</p>
+            )}
+          </div>
         </div>
       </div>
       <div className="footer pt-16">
