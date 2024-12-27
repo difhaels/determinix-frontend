@@ -6,11 +6,10 @@ import Footer from "../components/Footer";
 import PageTitle from "../elements/PageTilte";
 
 import CardMember from "../components/CardMember";
-import { members } from "../test/constant";
 
 export default function About() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [backendData, setBackendData] = useState([{}]);
+  const [members, setMembers] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -21,23 +20,17 @@ export default function About() {
     return () => (window.onscroll = null);
   };
 
+  // panggil member
   useEffect(() => {
-    fetch("/test")
+    fetch('http://localhost:5000/members')
       .then((response) => response.json())
-      .then((data) => setBackendData(data));
+      .then((data) => setMembers(data));
   }, []);
 
   return (
     <div>
       <div className="navbar">
         <Navbar isScrolled={isScrolled} />
-      </div>
-      <div>
-        {typeof backendData.users === "undefined" ? (
-          <p>loading....</p>
-        ) : (
-          backendData.users.map((user, i) => <p key={i}>{user}</p>)
-        )}
       </div>
       <div className="bg-gradient-to-b from-rose-200 to-white">
         <PageTitle what={"About"} />
@@ -68,7 +61,7 @@ export default function About() {
                   key={member.id}
                   id={member.id}
                   name={member.name}
-                  j={member.j}
+                  aka={member.aka}
                   img={member.img}
                 />
               );

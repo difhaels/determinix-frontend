@@ -2,14 +2,13 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-export default function CardMember({ id, name, j, img }) {
+export default function CardMember({ id, name, aka, img }) {
   return (
-    <Link to={`/member/${id}`} className="grid grid-cols-2 justify-center items-center bg-white w-full px-4 py-3 shadow-md hover:scale-105 cursor-pointer transition lg:mb-0 mb-1">
-      {img ? (
-        <div className="w-20 h-20">
-          <img src={img} alt={name} className="rounded-full" />
-        </div>
-      ) : (
+    <Link
+      to={`/member/${id}`}
+      className="grid grid-cols-2 justify-center items-center bg-white w-full px-4 py-3 shadow-md hover:scale-105 cursor-pointer transition lg:mb-0 mb-1"
+    >
+      {img === "notset" ? (
         <div className="w-20 h-20 rounded-full bg-slate-200 flex justify-center items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -26,11 +25,15 @@ export default function CardMember({ id, name, j, img }) {
             />
           </svg>
         </div>
+      ) : (
+        <div className="w-20 h-20">
+          <img src={img} alt={name} className="rounded-full" />
+        </div>
       )}
 
       <div>
         <h1 className="font-semibold">{name}</h1>
-        <h1 className="italic">{j}</h1>
+        <h1 className="italic">{aka}</h1>
       </div>
     </Link>
   );
