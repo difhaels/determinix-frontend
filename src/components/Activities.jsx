@@ -4,17 +4,15 @@ import Title from "../elements/Title";
 import CardActivities from "../elements/CardActivities";
 import More from "../elements/More";
 
-import { activities } from "../test/constant";
-
 export default function Activities() {
 
-  const activitiy = activities.slice(0,3);
+  // const activitiy = activities.slice(0,3);
   return (
     <div>
       <Divider />
       <Title what={"Activities"} />
       <div className="flex flex-wrap justify-center py-5">
-        {activitiy.map((activity) => {
+        {/* {activitiy.map((activity) => {
           return (
             <CardActivities
               id={activity.id}
@@ -23,7 +21,7 @@ export default function Activities() {
               full={false}
             />
           );
-        })}
+        })} */}
       </div>
       <More what={"Activities"} where={"activities"} />
     </div>

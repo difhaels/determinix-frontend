@@ -3,7 +3,6 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import { XMarkIcon } from "@heroicons/react/24/solid";
 
-import { projects } from "../test/constant";
 import Up from "../elements/Up";
 import Footer from "./Footer";
 

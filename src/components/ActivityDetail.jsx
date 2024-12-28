@@ -1,17 +1,28 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { XMarkIcon } from "@heroicons/react/24/solid";
 
-import { activities } from "../test/constant";
 import Up from "../elements/Up";
 import Footer from "./Footer";
 
 export default function ActivityDetail() {
+  const scrollRef = useRef();
   const navigate = useNavigate();
   const { id } = useParams();
-  const activity = activities.find((item) => item.id === parseInt(id));
-  const scrollRef = useRef();
+
+  const [activity, setActivities] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/activities/${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setActivities(data);
+      });
+  }, [id]);
+
+  if (!activity) return <div>Loading...</div>;
+
   return (
     <div
       ref={scrollRef}

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { activities, articles } from "../test/constant";
+import {  articles } from "../test/constant";
 import { Link, useParams } from "react-router-dom";
 import { ChevronLeftIcon } from "@heroicons/react/20/solid";
 
@@ -22,7 +22,7 @@ export default function MemberDetail() {
   const member = members.find((item) => item.id === parseInt(id));
 
   // const project = projects ? projects.slice(0, 3) : [];
-  const activitiy = activities.slice(0, 3);
+  // const activitiy = activities.slice(0, 3);
   const article = articles.slice(0, 3);
 
   return (
@@ -115,7 +115,7 @@ export default function MemberDetail() {
       <div className="w-full pt-16">
         <TitleMember what={"Activities"} />
         <div className="flex flex-wrap justify-center py-5">
-          {activitiy.map((activity) => {
+          {/* {activitiy.map((activity) => {
             return (
               <CardActivities
                 id={activity.id}
@@ -124,7 +124,7 @@ export default function MemberDetail() {
                 full={false}
               />
             );
-          })}
+          })} */}
         </div>
         <More what={"Activities by " + member.name} where={"activities"} />
       </div>

@@ -1,19 +1,3 @@
-
-export const activities = [
-  {
-    id: 8001,
-    date: "June 18, 2023",
-    title: "Activities 01",
-    img: "/assets/lepy.png",
-  },
-  {
-    id: 8002,
-    date: "June 18, 2023",
-    title: "Activities 02",
-    img: "/assets/lepy.png",
-  },
-];
-
 export const articles = [
   {
     id: 800001,
