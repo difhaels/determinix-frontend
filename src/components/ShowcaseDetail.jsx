@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { XMarkIcon } from "@heroicons/react/24/solid";
@@ -8,10 +8,18 @@ import Up from "../elements/Up";
 import Footer from "./Footer";
 
 export default function ShowcaseDetail() {
+  const scrollRef = useRef();
   const navigate = useNavigate();
   const { id } = useParams();
-  const project = projects.find((item) => item.id === parseInt(id));
-  const scrollRef = useRef();
+
+  const [project, setProject] = useState([{}]);
+  useEffect(() => {
+    fetch(`http://localhost:5000/projects/${id}`)
+      .then((response) => response.json())
+      .then((data) => setProject(data));
+  }, [id]);
+
+  if (!project) return <div>Loading...</div>;
 
   return (
     <div
@@ -25,13 +33,20 @@ export default function ShowcaseDetail() {
               {project.title}
             </h1>
             <div className="flex gap-2">
-              {project.members.map((member) => {
-                return (
-                  <h1 className="first-letter:uppercase text-white">
-                    {member}
-                  </h1>
-                );
-              })}
+              {Array.isArray(project.members) && project.members.length > 0 ? (
+                project.members.map((member) => {
+                  return (
+                    <h1
+                      className="first-letter:uppercase text-white"
+                      key={member._id}
+                    >
+                      {member.name}{" | "}
+                    </h1>
+                  );
+                })
+              ) : (
+                <p>Loading...</p>
+              )}
             </div>
           </div>
           <div
