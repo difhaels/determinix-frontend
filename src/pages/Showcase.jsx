@@ -17,12 +17,13 @@ export default function Showcase() {
     return () => (window.onscroll = null);
   };
 
-  const [projects, setProjects] = useState([{}]);
+  const [projects, setProjects] = useState([]);
   // panggil project
   useEffect(() => {
     fetch("http://localhost:5000/projects")
       .then((response) => response.json())
       .then((data) => {
+        console.log("fetch", data)
         setProjects(data);
       });
   }, []);

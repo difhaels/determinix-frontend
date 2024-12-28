@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { activities, articles, projects } from "../test/constant";
+import { activities, articles } from "../test/constant";
 import { Link, useParams } from "react-router-dom";
 import { ChevronLeftIcon } from "@heroicons/react/20/solid";
 
@@ -21,7 +21,7 @@ export default function MemberDetail() {
   const { id } = useParams();
   const member = members.find((item) => item.id === parseInt(id));
 
-  const project = projects ? projects.slice(0, 3) : [];
+  // const project = projects ? projects.slice(0, 3) : [];
   const activitiy = activities.slice(0, 3);
   const article = articles.slice(0, 3);
 
@@ -92,7 +92,7 @@ export default function MemberDetail() {
         </div>
       </div>
 
-      <div className="w-full pt-16">
+      {/* <div className="w-full pt-16">
         <TitleMember what={"Showcase"} />
         <div className="flex justify-center py-10 flex-wrap gap-3">
           {project.map((project) => {
@@ -110,7 +110,7 @@ export default function MemberDetail() {
           })}
         </div>
         <More what={"Showcase by " + member.name} where={"showcase"} />
-      </div>
+      </div> */}
 
       <div className="w-full pt-16">
         <TitleMember what={"Activities"} />

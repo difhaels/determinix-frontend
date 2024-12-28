@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 export default function CardShowCase({ id, title, date, members, img, full }) {
   const participant = members ? members.slice(0, 3).map(member => member.split(" ")[0]) : [];
-  
   return (
     <Link
       to={`/showcase/${id}`}
