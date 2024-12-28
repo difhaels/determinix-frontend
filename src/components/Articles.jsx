@@ -4,13 +4,12 @@ import Title from "../elements/Title";
 import CardArticles from "../elements/CardArticles";
 import More from "../elements/More";
 
-import { articles } from "../test/constant";
 import { Link } from "react-router-dom";
 
 export default function Articles() {
-  const topArticles = articles.find((article) => article.id === 800001);
+  // const topArticles = articles.find((article) => article.id === 800001);
 
-  const article = articles.slice(0, 3);
+  // const article = articles.slice(0, 3);
 
   return (
     <div>
@@ -19,13 +18,13 @@ export default function Articles() {
       <div className="py-5 flex justify-center">
         <div className="px-2 py-2 hidden lg:block">
           <div className="w-[30rem]">
-            <img
+            {/* <img
               src={topArticles.img}
               alt={topArticles.title}
               className="w-full h-full "
-            />
+            /> */}
           </div>
-          <div className="w-96 px-2">
+          {/* <div className="w-96 px-2">
             <h1 className="text-base underline text-slate-600">
               {topArticles.type}
             </h1>
@@ -39,10 +38,10 @@ export default function Articles() {
             >
               Read More
             </Link>
-          </div>
+          </div> */}
         </div>
         <div>
-          {article.map((article) => {
+          {/* {article.map((article) => {
             return (
               <CardArticles
                 id={article.id}
@@ -54,7 +53,7 @@ export default function Articles() {
                 img={article.img}
               />
             );
-          })}
+          })} */}
         </div>
       </div>
       <More what={"Articles"} where={"articles"} />
