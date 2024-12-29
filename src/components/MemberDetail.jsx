@@ -5,8 +5,8 @@ import { ChevronLeftIcon } from "@heroicons/react/20/solid";
 
 import TitleMember from "../elements/TitleMember";
 
-import CardShowCase from "../elements/CardShowCase";
-import CardActivities from "../elements/CardActivities";
+// import CardShowCase from "../elements/CardShowCase";
+// import CardActivities from "../elements/CardActivities";
 import CardArticles from "../elements/CardArticles";
 
 import More from "../elements/More";
