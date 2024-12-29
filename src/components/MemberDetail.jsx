@@ -1,12 +1,10 @@
-import React, { useEffect } from "react";
-import {  articles } from "../test/constant";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ChevronLeftIcon } from "@heroicons/react/20/solid";
 
 import TitleMember from "../elements/TitleMember";
 
-// import CardShowCase from "../elements/CardShowCase";
-// import CardActivities from "../elements/CardActivities";
+import CardShowCase from "../elements/CardShowCase";
 import CardArticles from "../elements/CardArticles";
 
 import More from "../elements/More";
@@ -17,13 +15,38 @@ export default function MemberDetail() {
     window.scrollTo(0, 0);
   }, []);
 
-  const members = {};
   const { id } = useParams();
-  const member = members.find((item) => item.id === parseInt(id));
 
-  // const project = projects ? projects.slice(0, 3) : [];
-  // const activitiy = activities.slice(0, 3);
-  const article = articles.slice(0, 3);
+  const [member, setMember] = useState({});
+  const [projects, setProjects] = useState([]);
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/member/${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setMember(data);
+      });
+  }, [id]);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/mp/${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setProjects(data);
+      });
+  }, [id]);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/ap/${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setArticles(data);
+      });
+  }, [id]);
+
+  const projectSlice = projects ? projects.slice(0, 3) : [];
+  const articleSlice = articles ? articles.slice(0, 3) : [];
 
   return (
     <div>
@@ -92,17 +115,21 @@ export default function MemberDetail() {
         </div>
       </div>
 
-      {/* <div className="w-full pt-16">
+      <div className="w-full pt-16">
         <TitleMember what={"Showcase"} />
         <div className="flex justify-center py-10 flex-wrap gap-3">
-          {project.map((project) => {
+          {projectSlice.map((project) => {
             return (
               <CardShowCase
-                key={project.id}
-                id={project.id}
+                key={project._id}
+                id={project._id}
                 title={project.title}
                 date={project.date}
-                members={project.members}
+                members={
+                  Array.isArray(project.members)
+                    ? project.members.map((member) => member.name)
+                    : []
+                }
                 img={project.img}
                 full={true}
               />
@@ -110,34 +137,17 @@ export default function MemberDetail() {
           })}
         </div>
         <More what={"Showcase by " + member.name} where={"showcase"} />
-      </div> */}
-
-      <div className="w-full pt-16">
-        <TitleMember what={"Activities"} />
-        <div className="flex flex-wrap justify-center py-5">
-          {/* {activitiy.map((activity) => {
-            return (
-              <CardActivities
-                id={activity.id}
-                date={activity.date}
-                img={activity.img}
-                full={false}
-              />
-            );
-          })} */}
-        </div>
-        <More what={"Activities by " + member.name} where={"activities"} />
       </div>
 
       <div className="articles w-full pt-16">
         <TitleMember what={"Articles"} />
         <div className="flex flex-wrap justify-center gap-3 py-5">
-          {article.map((article) => {
+          {articleSlice.map((article) => {
             return (
               <CardArticles
                 full={1}
-                id={article.id}
-                writer={article.writer}
+                id={article._id}
+                writer={article.writer.name} // ambil dari objek writer
                 date={article.date}
                 title={article.title}
                 type={article.type}

@@ -58,8 +58,8 @@ export default function About() {
             {members.map((member) => {
               return (
                 <CardMember
-                  key={member.id}
-                  id={member.id}
+                  key={member._id}
+                  id={member._id}
                   name={member.name}
                   aka={member.aka}
                   img={member.img}
