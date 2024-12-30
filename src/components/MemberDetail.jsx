@@ -9,6 +9,7 @@ import CardArticles from "../elements/CardArticles";
 
 import More from "../elements/More";
 import Footer from "./Footer";
+import Nothing from "./Nothing";
 
 export default function MemberDetail() {
   useEffect(() => {
@@ -117,48 +118,60 @@ export default function MemberDetail() {
 
       <div className="w-full pt-16">
         <TitleMember what={"Showcase"} />
-        <div className="flex justify-center py-10 flex-wrap gap-3">
-          {projectSlice.map((project) => {
-            return (
-              <CardShowCase
-                key={project._id}
-                id={project._id}
-                title={project.title}
-                date={project.date}
-                members={
-                  Array.isArray(project.members)
-                    ? project.members.map((member) => member.name)
-                    : []
-                }
-                img={project.img}
-                full={true}
-              />
-            );
-          })}
-        </div>
-        <More what={"Showcase by " + member.name} where={"showcase"} />
+        {projects.length > 0 ? (
+          <div>
+            <div className="flex justify-center py-10 flex-wrap gap-3">
+              {projectSlice.map((project) => {
+                return (
+                  <CardShowCase
+                    key={project._id}
+                    id={project._id}
+                    title={project.title}
+                    date={project.date}
+                    members={
+                      Array.isArray(project.members)
+                        ? project.members.map((member) => member.name)
+                        : []
+                    }
+                    img={project.img}
+                    full={true}
+                  />
+                );
+              })}
+            </div>
+            <More what={"Showcase by " + member.name} where={"showcase"} />
+          </div>
+        ) : (
+          <Nothing what={"Sorry"} desc={"Nothing to display..."}/>
+        )}
       </div>
 
       <div className="articles w-full pt-16">
         <TitleMember what={"Articles"} />
-        <div className="flex flex-wrap justify-center gap-3 py-5">
-          {articleSlice.map((article) => {
-            return (
-              <CardArticles
-                full={1}
-                key={article._id}
-                id={article._id}
-                writer={article.writer.name} // ambil dari objek writer
-                date={article.date}
-                title={article.title}
-                type={article.type}
-                short={article.short}
-                img={article.img}
-              />
-            );
-          })}
-        </div>
-        <More what={"Articles by " + member.name} where={"article"} />
+        {articles.length > 0 ? (
+          <div>
+            <div className="flex flex-wrap justify-center gap-3 py-5">
+              {articleSlice.map((article) => {
+                return (
+                  <CardArticles
+                    full={1}
+                    key={article._id}
+                    id={article._id}
+                    writer={article.writer.name} // ambil dari objek writer
+                    date={article.date}
+                    title={article.title}
+                    type={article.type}
+                    short={article.short}
+                    img={article.img}
+                  />
+                );
+              })}
+            </div>
+            <More what={"Articles by " + member.name} where={"article"} />
+          </div>
+        ) : (
+          <Nothing what={"Sorry"} desc={"Nothing to display..."}/>
+        )}
       </div>
 
       <div className="footer pt-16">

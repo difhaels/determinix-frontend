@@ -2,7 +2,7 @@ import React from "react";
 
 import error from "../assets/error.png"
 
-export default function Error({why, desc, close}) {
+export default function Ups({why, desc, close}) {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
       <div className="bg-white p-6 rounded shadow-lg max-w-md flex gap-3 justify-center items-center">

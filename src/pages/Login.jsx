@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import dx from "../assets/dx-logo.png";
 import wp from "../assets/wplogin.png";
-import Error from "../components/Error";
+import Ups from "../components/Ups";
 
 export default function Login() {
   const [showPopupError, setShowPopupError] = useState(false);
@@ -78,7 +78,7 @@ export default function Login() {
             Register
           </button>
           {showPopupError && (
-            <Error
+            <Ups
               why={"Registration is not open yet"}
               desc={"we are not ready for this, please try again later"}
               close={setShowPopupError}
