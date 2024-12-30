@@ -14,6 +14,7 @@ import ActivityDetail from './components/ActivityDetail';
 import ArticleDetail from './components/ArticleDetail';
 import MemberDetail from './components/MemberDetail';
 import MemberShowcase from './components/MemberShowcase';
+import MemberArticle from './components/MemberArticle';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
 
         <Route path="/member/:id" element={<MemberDetail />} />
         <Route path="/member/:id/showcase" element={<MemberShowcase />} />
+        <Route path="/member/:id/article" element={<MemberArticle />} />
       </Routes>
     </BrowserRouter>
   );

@@ -158,7 +158,7 @@ export default function MemberDetail() {
             );
           })}
         </div>
-        <More what={"Articles by " + member.name} where={"articles"} />
+        <More what={"Articles by " + member.name} where={"article"} />
       </div>
 
       <div className="footer pt-16">
