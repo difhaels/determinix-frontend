@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { ChevronLeftIcon } from "@heroicons/react/20/solid";
 
 import TitleMember from "../elements/TitleMember";
@@ -12,6 +12,9 @@ import Footer from "./Footer";
 import Nothing from "./Nothing";
 
 export default function MemberDetail() {
+
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -27,24 +30,33 @@ export default function MemberDetail() {
       .then((response) => response.json())
       .then((data) => {
         setMember(data);
+      })
+      .catch(() => {
+        navigate("/server-down");
       });
-  }, [id]);
+  }, [id, navigate]);
 
   useEffect(() => {
     fetch(`http://localhost:5000/mp/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setProjects(data);
+      })
+      .catch(() => {
+        navigate("/server-down");
       });
-  }, [id]);
+  }, [id, navigate]);
 
   useEffect(() => {
     fetch(`http://localhost:5000/ap/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setArticles(data);
+      })
+      .catch(() => {
+        navigate("/server-down");
       });
-  }, [id]);
+  }, [id, navigate]);
 
   const projectSlice = projects ? projects.slice(0, 3) : [];
   const articleSlice = articles ? articles.slice(0, 3) : [];
@@ -142,7 +154,7 @@ export default function MemberDetail() {
             <More what={"Showcase by " + member.name} where={"showcase"} />
           </div>
         ) : (
-          <Nothing what={"Sorry"} desc={"Nothing to display..."}/>
+          <Nothing what={"Sorry"} desc={"Nothing to display..."} />
         )}
       </div>
 
@@ -170,7 +182,7 @@ export default function MemberDetail() {
             <More what={"Articles by " + member.name} where={"article"} />
           </div>
         ) : (
-          <Nothing what={"Sorry"} desc={"Nothing to display..."}/>
+          <Nothing what={"Sorry"} desc={"Nothing to display..."} />
         )}
       </div>
 

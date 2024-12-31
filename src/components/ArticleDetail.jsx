@@ -10,16 +10,19 @@ export default function ArticleDetail() {
   const scrollRef = useRef();
   const navigate = useNavigate();
   const { id } = useParams();
+
   const [article, setArticle] = useState([]);
 
   useEffect(() => {
     fetch(`http://localhost:5000/articles/${id}`)
       .then((response) => response.json())
       .then((data) => {
-        // console.log("ini bang ", data)
         setArticle(data);
+      })
+      .catch((err) => {
+        navigate("/server-down");
       });
-  }, [id]);
+  }, [id, navigate]);
 
   if (!article) return <div>Loading...</div>;
 

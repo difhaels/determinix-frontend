@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import CardShowCase from "../elements/CardShowCase";
 import CardArticles from "../elements/CardArticles";
 
 export default function MemberShowcase() {
+  const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -26,8 +26,11 @@ export default function MemberShowcase() {
       .then((response) => response.json())
       .then((data) => {
         setPerson(data);
+      })
+      .catch(() => {
+        navigate("/server-down");
       });
-  }, [id]);
+  }, [id, navigate]);
 
   const [article, setArticle] = useState([]);
   // panggil project by member
@@ -38,7 +41,7 @@ export default function MemberShowcase() {
         console.log(data);
         setArticle(data);
       });
-  }, [id]);
+  }, [id, navigate]);
 
   return (
     <div>

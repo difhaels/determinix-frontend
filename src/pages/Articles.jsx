@@ -5,8 +5,10 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import PageTitle from "../elements/PageTilte";
 import CardArticles from "../elements/CardArticles";
+import { useNavigate } from "react-router-dom";
 
 export default function Articles() {
+  const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -25,8 +27,11 @@ export default function Articles() {
       .then((response) => response.json())
       .then((data) => {
         setArticles(data);
+      })
+      .catch(() => {
+        navigate("/server-down");
       });
-  }, []);
+  }, [navigate]);
 
   return (
     <div>

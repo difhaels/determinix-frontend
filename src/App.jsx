@@ -16,6 +16,8 @@ import MemberDetail from './components/MemberDetail';
 import MemberShowcase from './components/MemberShowcase';
 import MemberArticle from './components/MemberArticle';
 
+import Nothing from './components/Nothing';
+
 function App() {
   return (
     <BrowserRouter>
@@ -36,6 +38,8 @@ function App() {
         <Route path="/member/:id" element={<MemberDetail />} />
         <Route path="/member/:id/showcase" element={<MemberShowcase />} />
         <Route path="/member/:id/article" element={<MemberArticle />} />
+        
+        <Route path="server-down" element={<Nothing what={"Server Is Down "} desc={"Please Comeback Later"}/>}/>
       </Routes>
     </BrowserRouter>
   );

@@ -6,8 +6,11 @@ import Footer from "../components/Footer";
 import PageTitle from "../elements/PageTilte";
 
 import CardMember from "../components/CardMember";
+import { useNavigate } from "react-router-dom";
 
 export default function About() {
+  const navigate = useNavigate();
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [members, setMembers] = useState([]);
 
@@ -22,10 +25,13 @@ export default function About() {
 
   // panggil member
   useEffect(() => {
-    fetch('http://localhost:5000/members')
+    fetch("http://localhost:5000/members")
       .then((response) => response.json())
-      .then((data) => setMembers(data));
-  }, []);
+      .then((data) => setMembers(data))
+      .catch(() => {
+        navigate("/server-down");
+      });
+  }, [navigate]);
 
   return (
     <div>

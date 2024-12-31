@@ -5,8 +5,10 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import PageTitle from "../elements/PageTilte";
 import CardActivities from "../elements/CardActivities";
+import { useNavigate } from "react-router-dom";
 
 export default function Activities() {
+  const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -20,8 +22,11 @@ export default function Activities() {
       .then((response) => response.json())
       .then((data) => {
         setActivities(data);
+      })
+      .catch(() => {
+        navigate("/server-down");
       });
-  }, []);
+  }, [navigate]);
 
   window.onscroll = () => {
     setIsScrolled(window.scrollY === 0 ? false : true);

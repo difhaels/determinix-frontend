@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import CardShowCase from "../elements/CardShowCase";
 
 export default function MemberShowcase() {
-
+  const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
-  
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
-  
-    window.onscroll = () => {
-      setIsScrolled(window.scrollY === 0 ? false : true);
-      return () => (window.onscroll = null);
-    };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  window.onscroll = () => {
+    setIsScrolled(window.scrollY === 0 ? false : true);
+    return () => (window.onscroll = null);
+  };
 
   const [person, setPerson] = useState({});
 
@@ -26,8 +26,11 @@ export default function MemberShowcase() {
       .then((response) => response.json())
       .then((data) => {
         setPerson(data);
+      })
+      .catch(() => {
+        navigate("/server-down");
       });
-  }, [id]);
+  }, [id, navigate]);
 
   const [projects, setProjects] = useState([]);
   // panggil project by member
@@ -38,12 +41,12 @@ export default function MemberShowcase() {
         console.log(data);
         setProjects(data);
       });
-  }, [id]);
+  }, [id, navigate]);
 
   return (
     <div>
       <div className="navbar">
-        <Navbar isScrolled={isScrolled}/>
+        <Navbar isScrolled={isScrolled} />
       </div>
       <div className="pt-32 text-lg font-semibold">
         <h1 className="px-5 lg:px-16">Project by {person.name}</h1>

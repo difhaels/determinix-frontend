@@ -3,8 +3,11 @@ import Divider from "../elements/Divider";
 import Title from "../elements/Title";
 import CardShowCase from "../elements/CardShowCase";
 import More from "../elements/More";
+import { useNavigate } from "react-router-dom";
 
 export default function Showcase() {
+
+  const navigate = useNavigate();
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -12,8 +15,14 @@ export default function Showcase() {
       .then((response) => response.json())
       .then((data) => {
         setProjects(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      })
+      .catch(() => {
+        navigate("/server-down");
       });
-  }, []);
+  }, [navigate]);
 
   const projectSlice = projects ? projects.slice(0, 3) : [];
 

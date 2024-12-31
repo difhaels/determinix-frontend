@@ -10,7 +10,6 @@ export default function ActivityDetail() {
   const scrollRef = useRef();
   const navigate = useNavigate();
   const { id } = useParams();
-
   const [activity, setActivities] = useState([]);
 
   useEffect(() => {
@@ -18,8 +17,11 @@ export default function ActivityDetail() {
       .then((response) => response.json())
       .then((data) => {
         setActivities(data);
+      })
+      .catch(() => {
+        navigate("/server-down");
       });
-  }, [id]);
+  }, [id, navigate]);
 
   if (!activity) return <div>Loading...</div>;
 

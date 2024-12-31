@@ -3,17 +3,24 @@ import Divider from "../elements/Divider";
 import Title from "../elements/Title";
 import CardActivities from "../elements/CardActivities";
 import More from "../elements/More";
+import { useNavigate } from "react-router-dom";
 
 export default function Activities() {
+
+  const navigate = useNavigate();
+
   const [activities, setActivities] = useState([]);
   useEffect(() => {
     fetch("http://localhost:5000/activities")
       .then((response) => response.json())
       .then((data) => {
         setActivities(data);
+      })
+      .catch((error) => {
+        navigate("/server-down");
       });
-  }, []);
-const activitiySlice = activities.slice(0,3);
+  }, [navigate]);
+  const activitiySlice = activities.slice(0, 3);
   return (
     <div>
       <Divider />
@@ -29,7 +36,7 @@ const activitiySlice = activities.slice(0,3);
               full={false}
             />
           );
-        })} 
+        })}
       </div>
       <More what={"Activities"} where={"activities"} />
     </div>

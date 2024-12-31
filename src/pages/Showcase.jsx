@@ -5,8 +5,11 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import PageTitle from "../elements/PageTilte";
 import CardShowCase from "../elements/CardShowCase";
+import { useNavigate } from "react-router-dom";
 
 export default function Showcase() {
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -24,8 +27,11 @@ export default function Showcase() {
       .then((response) => response.json())
       .then((data) => {
         setProjects(data);
+      })
+      .catch(() => {
+        navigate("/server-down");
       });
-  }, []);
+  }, [navigate]);
 
   return (
     <div>

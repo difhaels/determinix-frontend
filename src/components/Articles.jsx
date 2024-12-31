@@ -4,9 +4,11 @@ import Title from "../elements/Title";
 import CardArticles from "../elements/CardArticles";
 import More from "../elements/More";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Articles() {
+
+  const navigate = useNavigate();
   const [articles, setArticles] = useState([]);
   const [topArticles, setTopArticles] = useState([]);
 
@@ -15,16 +17,21 @@ export default function Articles() {
       .then((response) => response.json())
       .then((data) => {
         setArticles(data);
+      })
+      .catch(() => {
+        navigate("/server-down");
       });
-  }, []);
+  }, [navigate]);
 
   useEffect(() => {
     fetch("http://localhost:5000/articles")
       .then((response) => response.json())
       .then((data) => {
         setTopArticles(data[0]);
+      }).catch(() => {
+        navigate("/server-down");
       });
-  });
+  }, [navigate]);
 
   const articleSlice = articles.slice(0, 3);
 
@@ -47,7 +54,9 @@ export default function Articles() {
             </h1>
             <h1 className="text-sm text-slate-600">{topArticles.date}</h1>
             <h1 className="text-base font-medium">{topArticles.title}</h1>
-            <h1 className="text-sm text-slate-600">{topArticles.writer?.name}</h1>
+            <h1 className="text-sm text-slate-600">
+              {topArticles.writer?.name}
+            </h1>
             <h1>{topArticles.short}</h1>
             <Link
               to={`/showcase/${topArticles.id}`}
