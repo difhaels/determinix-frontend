@@ -22,6 +22,7 @@ const activitiySlice = activities.slice(0,3);
         {activitiySlice.map((activity) => {
           return (
             <CardActivities
+              key={activity._id}
               id={activity._id}
               date={activity.date}
               img={activity.img}

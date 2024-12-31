@@ -1,18 +1,14 @@
 import "../css/output.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import React, { useState } from "react";
 import dxlogo from "../assets/dx-logo.png";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 import MiniNavbar from "./MiniNavbar";
 
 export default function Navbar({ isScrolled }) {
-  const links = [
-    { name: "Home", link: "/" },
-    { name: "Showcase", link: "/showcase" },
-    { name: "Activities", link: "/activities" },
-    { name: "Articles", link: "/articles" },
-    { name: "About", link: "/about" },
-  ];
+  const location = useLocation();
+
+  const isActive = path => location.pathname === path;
 
   const [miniNavbar, setMiniNavbar] = useState(false);
 
@@ -27,13 +23,21 @@ export default function Navbar({ isScrolled }) {
       </div>
       <div className="hidden lg:block">
         <ul className="flex justify-between items-center gap-20">
-          {links.map(({ name, link }) => {
-            return (
-              <li key={name} className="hover:text-red-700 hover:scale-105">
-                <Link to={link}>{name}</Link>
-              </li>
-            );
-          })}
+          <li className={`hover:text-red-700 ${isActive('/')? "text-red-600 font-bold" : ""}`}>
+            <Link to={"/"}>Home</Link>
+          </li>
+          <li className={`hover:text-red-700 ${isActive('/showcase')? "text-red-600 font-bold" : ""}`}>
+            <Link to={"/showcase"}>Showcase</Link>
+          </li>
+      <li className={`hover:text-red-700 ${isActive('/activities')? "text-red-600 font-bold" : ""}`}>
+            <Link to={"/activities"}>Activities</Link>
+          </li>
+          <li className={`hover:text-red-700 ${isActive('/articles')? "text-red-600 font-bold" : ""}`}>
+            <Link to={"/articles"}>Articles</Link>
+          </li>
+          <li className={`hover:text-red-700 ${isActive('/about')? "text-red-600 font-bold" : ""}`}>
+            <Link to={"/about"}>About</Link>
+          </li>
         </ul>
       </div>
       <Link

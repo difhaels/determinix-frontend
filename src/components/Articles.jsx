@@ -61,6 +61,7 @@ export default function Articles() {
           {articleSlice.map((article) => {
             return (
               <CardArticles
+                key={article._id}
                 id={article._id}
                 date={article.date}
                 title={article.title}
