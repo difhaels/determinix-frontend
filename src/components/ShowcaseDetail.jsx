@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import { XMarkIcon } from "@heroicons/react/24/solid";
 
@@ -35,12 +35,14 @@ export default function ShowcaseDetail() {
               {Array.isArray(project.members) && project.members.length > 0 ? (
                 project.members.map((member) => {
                   return (
-                    <h1
-                      className="first-letter:uppercase text-white"
-                      key={member._id}
-                    >
-                      {member.name}{" | "}
-                    </h1>
+                    <Link to={`/member/${member._id}`} className="cursor-pointer flex text-white gap-2">
+                      <h1
+                        className="first-letter:uppercase text-white hover:text-blue-600"
+                        key={member._id}
+                      >{member.name}
+                      </h1>
+                        {" | "}
+                    </Link>
                   );
                 })
               ) : (

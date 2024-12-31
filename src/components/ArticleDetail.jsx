@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import { XMarkIcon } from "@heroicons/react/24/solid";
 
@@ -10,15 +10,15 @@ export default function ArticleDetail() {
   const scrollRef = useRef();
   const navigate = useNavigate();
   const { id } = useParams();
-  const [article, setArticle] = useState([])
-  
+  const [article, setArticle] = useState([]);
+
   useEffect(() => {
     fetch(`http://localhost:5000/articles/${id}`)
-    .then((response) => response.json())
-    .then((data) => {
-      // console.log("ini bang ", data)
-      setArticle(data);
-    });
+      .then((response) => response.json())
+      .then((data) => {
+        // console.log("ini bang ", data)
+        setArticle(data);
+      });
   }, [id]);
 
   if (!article) return <div>Loading...</div>;
@@ -38,7 +38,13 @@ export default function ArticleDetail() {
               </span>
             </h1>
             <h1 className="text-slate-400 text-xs">{article.date}</h1>
-            <h1 className="text-slate-400 text-sm">By {article.writer?.name}</h1>
+            <Link
+              to={`/member/${article.writer?._id}`}
+              className="text-slate-400 text-sm flex gap-1"
+            >
+              By
+              <h1 className=" hover:text-blue-600 ">{article.writer?.name}</h1>
+            </Link>
           </div>
           <div
             onClick={() => {
