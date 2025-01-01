@@ -20,18 +20,32 @@ export default function Articles() {
     return () => (window.onscroll = null);
   };
 
-  const [articles, setArticles] = useState([]);
-  // panggil articles
+  const [articles, setArticles] = useState([]); // State untuk artikel
+  const [type, setType] = useState(""); // State untuk type yang dipilih
+
+  // Fetch artikel berdasarkan tipe (pada awalnya akan mengambil semua artikel)
   useEffect(() => {
-    fetch("http://localhost:5000/articles")
+    fetchArticles(type); // Panggil fetchArticles saat komponen pertama kali dimuat
+  }, [type]); // Menambahkan `type` ke dalam dependency array agar fetch terjadi saat `type` berubah
+
+  // Fungsi untuk menangani perubahan pada dropdown
+  const handleSelectChange = (e) => {
+    const selectedType = e.target.value;
+    setType(selectedType); // Update state dengan nilai yang dipilih
+  };
+
+  // Fungsi untuk melakukan fetch artikel berdasarkan tipe
+  const fetchArticles = (selectedType) => {
+    const url = selectedType ? `http://localhost:5000/article/type/${selectedType}` : "http://localhost:5000/articles"; // Jika tidak ada tipe, ambil semua artikel
+    fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        setArticles(data);
+        setArticles(data); // Update state dengan data yang diterima
       })
       .catch(() => {
-        navigate("/server-down");
+        navigate("/server-down"); // Redirect jika terjadi error
       });
-  }, [navigate]);
+  };
 
   return (
     <div>
@@ -40,6 +54,20 @@ export default function Articles() {
       </div>
       <div className="bg-gradient-to-b from-yellow-300 to-white">
         <PageTitle what={"Articles"} />
+        <form className="px-4 lg:px-16 flex gap-2 items-center pt-10" action="">
+          <label htmlFor="type">Type</label>
+          <select
+            id="type"
+            className="rounded-sm px-2 py-1"
+            value={type} // Bind state dengan nilai yang dipilih
+            onChange={handleSelectChange} // Handle perubahan nilai dropdown
+          >
+            <option value="">All</option>
+            <option value="general">General</option>
+            <option value="nothing">Nothing</option>
+          </select>
+        </form>
+
         <div className="flex justify-center pt-10 gap-3 flex-wrap">
           {Array.isArray(articles) && articles.length > 0 ? (
             articles.map((article) => (

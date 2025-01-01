@@ -48,7 +48,7 @@ export default function MemberDetail() {
   }, [id, navigate]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/ap/${id}`)
+    fetch(`http://localhost:5000/ma/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setArticles(data);
