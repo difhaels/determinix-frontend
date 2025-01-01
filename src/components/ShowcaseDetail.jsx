@@ -7,7 +7,6 @@ import Up from "../elements/Up";
 import Footer from "./Footer";
 
 export default function ShowcaseDetail() {
-
   const scrollRef = useRef();
   const navigate = useNavigate();
   const { id } = useParams();
@@ -20,7 +19,7 @@ export default function ShowcaseDetail() {
       .catch(() => {
         navigate("/server-down");
       });
-  }, [id,navigate]);
+  }, [id, navigate]);
 
   if (!project) return <div>Loading...</div>;
 
@@ -60,7 +59,11 @@ export default function ShowcaseDetail() {
           </div>
           <div
             onClick={() => {
-              navigate("/showcase");
+              if (window.history.state && window.history.state.idx > 0) {
+                navigate(-1); // Kembali ke halaman sebelumnya jika ada
+              } else {
+                navigate("/showcase"); // Fallback ke halaman utama
+              }
             }}
             className="w-7 h-7 bg-black text-white rounded-full opacity-70 inset-0 p-1 cursor-pointer hover:opacity-50"
           >

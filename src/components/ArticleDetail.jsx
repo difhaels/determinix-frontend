@@ -51,7 +51,11 @@ export default function ArticleDetail() {
           </div>
           <div
             onClick={() => {
-              navigate("/articles");
+              if (window.history.state && window.history.state.idx > 0) {
+                navigate(-1); // Kembali ke halaman sebelumnya jika ada
+              } else {
+                navigate("/articles"); // Fallback ke halaman utama
+              }
             }}
             className="w-7 h-7 bg-black text-white rounded-full opacity-70 inset-0 p-1 cursor-pointer hover:opacity-50"
           >
