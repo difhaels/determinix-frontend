@@ -1,32 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import dx from "../assets/dx-logo.png";
 import wp from "../assets/wplogin.png";
 import Ups from "../components/Ups";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const navigate = useNavigate();
   const [showPopupError, setShowPopupError] = useState(false);
+  const [usernameCheck, setUsernameCheck] = useState("");
+  const [passwordCheck, setPasswordCheck] = useState("");
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch("http://localhost:5000/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
+  // panggil project
+  useEffect(() => {
+    fetch("http://localhost:5000/admin")
+      .then((response) => response.json())
+      .then((data) => {
+        setUsernameCheck(data[0].username);
+        setPasswordCheck(data[0].password);
+      })
+      .catch(() => {
+        navigate("/server-down");
       });
+  }, [navigate]);
 
-      const data = await response.json();
-      if (response.ok) {
-        alert("Login successful!");
-        localStorage.setItem("token", data.token);
-      } else {
-        alert(data.message || "Login failed");
-      }
-    } catch (error) {
-      console.error(error);
-      alert("Something went wrong. Please try again.");
+  // handle login
+  const handleLogin = () => {
+    if (usernameCheck === username && passwordCheck === password) {
+      console.log("login berhasil");
+    } else {
+      console.log("login gagal");
     }
   };
 
@@ -42,13 +47,20 @@ export default function Login() {
           <div className="flex justify-center">
             <img src={dx} alt="dxlogo" className="w-10" />
           </div>
-          <form onSubmit={handleLogin} className="pt-3">
+          <form
+            className="pt-3"
+            onSubmit={
+              (e) => {
+                e.preventDefault(); // Mencegah refresh halaman
+                handleLogin(); // Menjalankan fungsi login
+              } // Mencegah refresh halaman
+            }
+          >
             <label htmlFor="uname" className="font-semibold">
               Username
             </label>
             <input
               type="text"
-              name="uname"
               className="w-full border-2 border-slate-900 rounded-md px-2 py-1 text-lg"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -59,7 +71,6 @@ export default function Login() {
             </label>
             <input
               type="password"
-              name="pwd"
               className="w-full border-2 border-slate-900 rounded-md px-2 py-1 text-lg"
               value={password}
               onChange={(e) => setPassword(e.target.value)}

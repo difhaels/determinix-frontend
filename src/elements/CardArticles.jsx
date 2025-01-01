@@ -13,7 +13,7 @@ export default function CardArticles({id, writer, date, title, type, short, img 
         />
       </div>
       <div className="w-64 px-2">
-        {full?<h1 className="text-base underline text-slate-600">{type}</h1>:""}
+        {full?<h1 className="text-base underline text-slate-600 uppercase">{type}</h1>:""}
         <h1 className="text-sm text-slate-600">{date}</h1>
         <h1 className="text-base font-medium">{title}</h1>
         {full?<h1 className="text-sm text-slate-600">{writer}</h1>:""}
