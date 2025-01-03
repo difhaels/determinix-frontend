@@ -26,6 +26,7 @@ export default function Articles() {
   // Fetch artikel berdasarkan tipe (pada awalnya akan mengambil semua artikel)
   useEffect(() => {
     fetchArticles(type); // Panggil fetchArticles saat komponen pertama kali dimuat
+    // eslint-disable-next-line
   }, [type]); // Menambahkan `type` ke dalam dependency array agar fetch terjadi saat `type` berubah
 
   // Fungsi untuk menangani perubahan pada dropdown

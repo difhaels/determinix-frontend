@@ -29,7 +29,7 @@ export default function Login() {
   // handle login
   const handleLogin = () => {
     if (usernameCheck === username && passwordCheck === password) {
-      console.log("login berhasil");
+      navigate('/dashboard')
     } else {
       console.log("login gagal");
     }
