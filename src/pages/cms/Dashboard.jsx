@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import CardCMS from "../../components/cms/CardCMS";
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -60,24 +61,12 @@ export default function Dashboard() {
   return (
     <>
       <div>Welcome Admin</div>
-      <div>
-        <div>General</div>
-        <div>
-          <div>Project</div>
-          <div>Jumlah {projects.length}</div>
-        </div>
-        <div>
-          <div>Activities</div>
-          <div>Jumlah {activities.length}</div>
-        </div>
-        <div>
-          <div>Articles</div>
-          <div>Jumlah {articles.length}</div>
-        </div>
-        <div>
-          <div>Members</div>
-          <div>Jumlah {members.length}</div>
-        </div>
+      <div className="flex justify-between">
+        <CardCMS what={"GENERAL"}/>
+        <CardCMS what={"PROJECT"} many={projects.length}/>
+        <CardCMS what={"ACTIVITIES"} many={activities.length}/>
+        <CardCMS what={"ARTICLES"} many={articles.length}/>
+        <CardCMS what={"MEMBERS"} many={members.length}/>
       </div>
     </>
   );
