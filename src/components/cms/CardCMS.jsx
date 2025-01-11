@@ -11,35 +11,35 @@ export default function CardCMS({ what, where, many }) {
     <div className="shadow-lg">
       {what === "GENERAL" ? (
         <Link to={where}>
-          <img src={vec1} className="w-64 h-28" alt={what + ".img"} />
+          <img src={vec1} className="w-full h-32" alt={what + ".img"} />
         </Link>
       ) : (
         ""
       )}
       {what === "PROJECT" ? (
         <Link to={where}>
-          <img src={vec2} className="w-64 h-28" alt={what + ".img"} />
+          <img src={vec2} className="w-full h-32" alt={what + ".img"} />
         </Link>
       ) : (
         ""
       )}
       {what === "ACTIVITIES" ? (
         <Link to={where}>
-          <img src={vec3} className="w-64 h-28" alt={what + ".img"} />
+          <img src={vec3} className="w-full h-32" alt={what + ".img"} />
         </Link>
       ) : (
         ""
       )}
       {what === "ARTICLES" ? (
         <Link to={where}>
-          <img src={vec4} className="w-64 h-28" alt={what + ".img"} />
+          <img src={vec4} className="w-full h-32" alt={what + ".img"} />
         </Link>
       ) : (
         ""
       )}
       {what === "MEMBERS" ? (
         <Link to={where}>
-          <img src={vec5} className="w-64 h-28" alt={what + ".img"} />
+          <img src={vec5} className="w-full h-32" alt={what + ".img"} />
         </Link>
       ) : (
         ""
