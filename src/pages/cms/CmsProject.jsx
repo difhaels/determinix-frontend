@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import CardCmsProject from "./CardCmsProject";
 
 export default function CmsProject() {
   const navigate = useNavigate();
@@ -36,15 +37,9 @@ export default function CmsProject() {
       <div className="p-5 mb-5 shadow-md">
         <h1>Projects</h1>
         <div>
-          <div className="flex justify-between items-center p-3 shadow-md">
-            <h1>Nama Project</h1>
-            <h1>28 Jan 2023</h1>
-            <div className="flex items-center gap-3">
-              <Link className="bg-slate-500 text-white px-3 py-1 rounded-md text-sm hover:bg-slate-400">Edit</Link>
-              <Link className="bg-sky-500 text-white px-3 py-1 rounded-md text-sm hover:bg-sky-400">Preview</Link>
-              <Link className="bg-red-500 text-white px-3 py-1 rounded-md text-sm hover:bg-red-400">Delete</Link>
-            </div>
-          </div>
+          <CardCmsProject/>
+          <CardCmsProject/>
+          <CardCmsProject/>
         </div>
       </div>
     </div>
