@@ -32,14 +32,32 @@ export default function CmsProject() {
         </button>
       </div>
       <div className="p-5 mb-5 shadow-md">
-        <h1 className="font-semibold">Total Project : <span className="text-green-500">{projects.length}</span> </h1>
+        <h1 className="font-semibold">
+          Total Project :{" "}
+          <span className="text-green-500">{projects.length}</span>{" "}
+        </h1>
       </div>
       <div className="p-5 mb-5 shadow-md">
         <h1>Projects</h1>
         <div>
-          <CardCmsProject/>
-          <CardCmsProject/>
-          <CardCmsProject/>
+          {Array.isArray(projects) && projects.length > 0 ? (
+            projects.map((project, index) => (
+              <CardCmsProject
+                no={index}
+                key={`${project._id}-${index}`}
+                id={project._id}
+                title={project.title}
+                date={project.date}
+                members={
+                  Array.isArray(project.members)
+                    ? project.members.map((member) => member.name)
+                    : []
+                }
+              />
+            ))
+          ) : (
+            <p>Loading projects...</p>
+          )}
         </div>
       </div>
     </div>
