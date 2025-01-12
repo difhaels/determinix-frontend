@@ -18,6 +18,7 @@ import MemberArticle from "./components/MemberArticle";
 
 import Nothing from "./components/Nothing";
 import Dashboard from "./pages/cms/Dashboard";
+import CmsProject from "./pages/cms/CmsProject";
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
         <Route path="/member/:id/showcase" element={<MemberShowcase />} />
         <Route path="/member/:id/article" element={<MemberArticle />} />
 
+        {/* CMS Route */}
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard/cms-project" element={<CmsProject />} />
         <Route path="/dashboard" element={<Dashboard />} />
 
         <Route

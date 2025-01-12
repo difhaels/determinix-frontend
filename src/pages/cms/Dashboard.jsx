@@ -59,20 +59,20 @@ export default function Dashboard() {
   }, [navigate]);
 
   return (
-    <div>
-      <div className="p-5">
-        <div className="p-3 shadow-md">Welcome Admin</div>
-      </div>
-      <div className="p-5">
-        <div className="p-5 shadow-md">
-          <h1 className=" text-lg pb-4">Content Management</h1>
-          <div className="grid grid-cols-3 gap-7">
-            <CardCMS what={"GENERAL"} />
-            <CardCMS what={"PROJECT"} many={projects.length} />
-            <CardCMS what={"ACTIVITIES"} many={activities.length} />
-            <CardCMS what={"ARTICLES"} many={articles.length} />
-            <CardCMS what={"MEMBERS"} many={members.length} />
-          </div>
+    <div className="p-5">
+      <div className="mb-5 p-3 shadow-md">Welcome Admin</div>
+      <div className="p-5 shadow-md">
+        <h1 className=" text-lg pb-4">Content Management</h1>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-7">
+          <CardCMS what={"GENERAL"} />
+          <CardCMS
+            what={"PROJECT"}
+            many={projects.length}
+            where={"cms-project"}
+          />
+          <CardCMS what={"ACTIVITIES"} many={activities.length} />
+          <CardCMS what={"ARTICLES"} many={articles.length} />
+          <CardCMS what={"MEMBERS"} many={members.length} />
         </div>
       </div>
     </div>
