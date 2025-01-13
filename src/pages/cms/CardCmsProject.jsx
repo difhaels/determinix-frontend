@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Delete from "./Delete";
 
-export default function CardCmsProject({no, id, title, date}) {
+export default function CardCmsProject({ no, id, title, date }) {
+  const [showPopupDelete, setShowPopupDelete] = useState(false);
   return (
     <div className="flex justify-between items-center p-3 shadow-md mb-3 group hover:bg-slate-400">
       <h1 className="group-hover:text-white">{no + 1}</h1>
@@ -14,9 +16,17 @@ export default function CardCmsProject({no, id, title, date}) {
         <Link className="bg-sky-500 text-white px-3 py-1 rounded-md text-sm hover:bg-sky-400">
           Preview
         </Link>
-        <Link className="bg-red-500 text-white px-3 py-1 rounded-md text-sm hover:bg-red-400">
+        <button onClick={() => setShowPopupDelete(true)} className="bg-red-500 text-white px-3 py-1 rounded-md text-sm hover:bg-red-400">
           Delete
-        </Link>
+        </button>
+        {showPopupDelete && (
+          <Delete
+            idOf={id}
+            nameOf={title}
+            type={"project"}
+            close={setShowPopupDelete}
+          />
+        )}
       </div>
     </div>
   );
