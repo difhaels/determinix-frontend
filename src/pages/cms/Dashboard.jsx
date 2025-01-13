@@ -60,7 +60,10 @@ export default function Dashboard() {
 
   return (
     <div className="p-5">
-      <div className="mb-5 p-3 shadow-md">Welcome Admin</div>
+      <div className="mb-5 p-3 shadow-md flex justify-between items-center">
+        <div> Welcome Admin</div>
+        <button className="bg-red-500 text-white px-2 py-1 rounded-sm hover:scale-105">Logout</button>
+      </div>
       <div className="p-5 shadow-md">
         <h1 className=" text-lg pb-4">Content Management</h1>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-7">
