@@ -36,6 +36,11 @@ export default function CmsProject() {
           Total Project :{" "}
           <span className="text-green-500">{projects.length}</span>{" "}
         </h1>
+        <div className="mt-4 bg-green-500 text-white flex justify-center items-center p-3 hover:bg-green-400">
+          <div className="w-full border-2 border-dashed flex justify-center py-2 text-lg">
+            <h1>Create New Project "+"</h1>
+          </div>
+        </div>
       </div>
       <div className="p-5 mb-5 shadow-md">
         <h1>Projects</h1>
