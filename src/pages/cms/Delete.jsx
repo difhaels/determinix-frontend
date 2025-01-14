@@ -5,6 +5,26 @@ import error from "../../assets/error.png";
 export default function Ups({ type, idOf, nameOf, close }) {
   const [confirm, setConfirm] = useState("");
 
+  const handleDelete = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:5000/delete/project/${id}`, {
+        method: "DELETE",
+      });
+      if (response.ok) {
+        alert("Project deleted successfully");
+        // // Perbarui daftar proyek setelah penghapusan
+        // setProjects((prevProjects) =>
+        //   prevProjects.filter((project) => project._id !== id)
+        // );
+      } else {
+        alert("Failed to delete project");
+      }
+    } catch (error) {
+      console.error("Error deleting project:", error);
+      alert("An error occurred while deleting the project");
+    }
+  };
+
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
       <div className="bg-white rounded shadow-lg max-w-md ">
@@ -32,8 +52,8 @@ export default function Ups({ type, idOf, nameOf, close }) {
             value={confirm}
             onChange={(e) => setConfirm(e.target.value)}
           />
-          {confirm === "dx/"+nameOf ? (
-            <button className="flex items-center justify-center bg-red-500 text-white w-full rounded-sm py-1">
+          {confirm === "dx/" + nameOf ? (
+            <button onClick={() => handleDelete(idOf)} className="flex items-center justify-center bg-red-500 text-white w-full rounded-sm py-1">
               Delete this {type}
             </button>
           ) : (
