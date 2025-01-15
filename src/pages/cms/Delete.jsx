@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import error from "../../assets/error.png";
 
-export default function Ups({ type, idOf, nameOf, close }) {
+export default function Ups({ type, idOf, nameOf, close, onDelete }) {
   const [confirm, setConfirm] = useState("");
 
   const handleDelete = async (id) => {
@@ -12,10 +12,8 @@ export default function Ups({ type, idOf, nameOf, close }) {
       });
       if (response.ok) {
         alert("Project deleted successfully");
-        // // Perbarui daftar proyek setelah penghapusan
-        // setProjects((prevProjects) =>
-        //   prevProjects.filter((project) => project._id !== id)
-        // );
+        // Perbarui daftar proyek setelah penghapusan
+        onDelete(id)
       } else {
         alert("Failed to delete project");
       }

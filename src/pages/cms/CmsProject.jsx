@@ -19,6 +19,12 @@ export default function CmsProject() {
       });
   }, [navigate]);
 
+  const handleDelete = (id) => {
+    setProjects((prevProjects) =>
+      prevProjects.filter((project) => project._id !== id)
+    );
+  };  
+
   return (
     <div className="p-5">
       <div className="p-5 mb-5 shadow-md flex justify-between">
@@ -58,6 +64,7 @@ export default function CmsProject() {
                     ? project.members.map((member) => member.name)
                     : []
                 }
+                onDelete={handleDelete} 
               />
             ))
           ) : (

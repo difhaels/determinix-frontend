@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Delete from "./Delete";
 
-export default function CardCmsProject({ no, id, title, date }) {
+export default function CardCmsProject({ no, id, title, date, onDelete}) {
   const [showPopupDelete, setShowPopupDelete] = useState(false);
   return (
     <div className="flex justify-between items-center p-3 shadow-md mb-3 group hover:bg-slate-400">
@@ -25,6 +25,7 @@ export default function CardCmsProject({ no, id, title, date }) {
             nameOf={title}
             type={"project"}
             close={setShowPopupDelete}
+            onDelete={onDelete}
           />
         )}
       </div>
