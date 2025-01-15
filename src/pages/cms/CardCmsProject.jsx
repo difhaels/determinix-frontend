@@ -13,7 +13,7 @@ export default function CardCmsProject({ no, id, title, date, onDelete}) {
         <Link className="bg-slate-500 text-white px-3 py-1 rounded-md text-sm hover:bg-slate-400">
           Edit
         </Link>
-        <Link className="bg-sky-500 text-white px-3 py-1 rounded-md text-sm hover:bg-sky-400">
+        <Link to={`/showcase/${id}`} className="bg-sky-500 text-white px-3 py-1 rounded-md text-sm hover:bg-sky-400">
           Preview
         </Link>
         <button onClick={() => setShowPopupDelete(true)} className="bg-red-500 text-white px-3 py-1 rounded-md text-sm hover:bg-red-400">
