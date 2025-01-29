@@ -37,9 +37,9 @@ function App() {
         <Route path="/activity/:id" element={<ActivityDetail />} />
         <Route path="/article/:id" element={<ArticleDetail />} />
 
-        <Route path="/member/:id" element={<MemberDetail />} />
-        <Route path="/member/:id/showcase" element={<MemberShowcase />} />
-        <Route path="/member/:id/article" element={<MemberArticle />} />
+        <Route path="/members/:id" element={<MemberDetail />} />
+        <Route path="/members/:id/showcase" element={<MemberShowcase />} />
+        <Route path="/members/:id/article" element={<MemberArticle />} />
 
         {/* CMS Route */}
         <Route path="/dashboard" element={<Dashboard />} />

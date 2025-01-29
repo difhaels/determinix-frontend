@@ -26,7 +26,7 @@ export default function MemberDetail() {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/member/${id}`)
+    fetch(`http://localhost:5000/members/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setMember(data);
@@ -37,7 +37,7 @@ export default function MemberDetail() {
   }, [id, navigate]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/mp/${id}`)
+    fetch(`http://localhost:5000/projects/mp/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setProjects(data);
@@ -48,7 +48,7 @@ export default function MemberDetail() {
   }, [id, navigate]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/ma/${id}`)
+    fetch(`http://localhost:5000/articles/ma/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setArticles(data);

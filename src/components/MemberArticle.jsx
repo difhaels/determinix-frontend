@@ -22,7 +22,7 @@ export default function MemberShowcase() {
   const { id } = useParams();
   // panggil member
   useEffect(() => {
-    fetch(`http://localhost:5000/member/${id}`)
+    fetch(`http://localhost:5000/members/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setPerson(data);
@@ -35,7 +35,7 @@ export default function MemberShowcase() {
   const [article, setArticle] = useState([]);
   // panggil project by member
   useEffect(() => {
-    fetch(`http://localhost:5000/ap/${id}`)
+    fetch(`http://localhost:5000/articles/ma/${id}`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

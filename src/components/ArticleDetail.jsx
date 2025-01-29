@@ -42,7 +42,7 @@ export default function ArticleDetail() {
             </h1>
             <h1 className="text-slate-400 text-xs">{article.date}</h1>
             <Link
-              to={`/member/${article.writer?._id}`}
+              to={`/members/${article.writer?._id}`}
               className="text-slate-400 text-sm flex gap-1"
             >
               By

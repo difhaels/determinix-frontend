@@ -39,7 +39,7 @@ export default function ShowcaseDetail() {
                 project.members.map((member) => {
                   return (
                     <Link
-                      to={`/member/${member._id}`}
+                      to={`/members/${member._id}`}
                       className="cursor-pointer flex text-white gap-2"
                     >
                       <h1

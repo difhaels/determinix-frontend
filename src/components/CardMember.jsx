@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function CardMember({ id, name, aka, img }) {
   return (
     <Link
-      to={`/member/${id}`}
+      to={`/members/${id}`}
       className="grid grid-cols-2 justify-center items-center bg-white w-full px-4 py-3 shadow-md hover:scale-105 cursor-pointer transition lg:mb-0 mb-1"
     >
       {img === "notset" ? (
