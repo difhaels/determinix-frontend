@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import dx from "../assets/dx-logo.png";
 import wp from "../assets/wplogin.png";
-import Ups from "../components/Ups";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
@@ -82,18 +81,13 @@ export default function Login() {
               Login
             </button>
           </form>
-          <button
-            className="bg-slate-800 text-slate-100 rounded-md w-full py-2 mt-2 hover:bg-slate-600"
-            onClick={() => setShowPopupError(true)}
-          >
-            Register
-          </button>
           {showPopupError && (
-            <Ups
-              why={"Registration is not open yet"}
-              desc={"we are not ready for this, please try again later"}
-              close={setShowPopupError}
-            />
+            // <Ups
+            //   why={"Registration is not open yet"}
+            //   desc={"we are not ready for this, please try again later"}
+            //   close={setShowPopupError}
+            // />
+            <></>
           )}
         </div>
       </div>

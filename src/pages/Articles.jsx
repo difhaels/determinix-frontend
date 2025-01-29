@@ -37,7 +37,7 @@ export default function Articles() {
 
   // Fungsi untuk melakukan fetch artikel berdasarkan tipe
   const fetchArticles = (selectedType) => {
-    const url = selectedType ? `http://localhost:5000/article/type/${selectedType}` : "http://localhost:5000/articles"; // Jika tidak ada tipe, ambil semua artikel
+    const url = selectedType ? `http://localhost:5000/articles/type/${selectedType}` : "http://localhost:5000/articles"; // Jika tidak ada tipe, ambil semua artikel
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
