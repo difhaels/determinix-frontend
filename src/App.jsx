@@ -26,7 +26,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
 
-        <Route path="/login" element={<Login />} />
 
         <Route path="/showcase" element={<Showcase />} />
         <Route path="/activities" element={<Activities />} />
@@ -42,12 +41,12 @@ function App() {
         <Route path="/members/:id/article" element={<MemberArticle />} />
 
         {/* CMS Route */}
+        <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/dashboard/cms-project" element={<CmsProject />} />
-        <Route path="/dashboard" element={<Dashboard />} />
 
         <Route
-          path="server-down"
+          path="/server-down"
           element={
             <Nothing what={"Server Is Down "} desc={"Please Comeback Later"} />
           }
