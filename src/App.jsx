@@ -19,6 +19,7 @@ import MemberArticle from "./components/MemberArticle";
 import Nothing from "./components/Nothing";
 import Dashboard from "./pages/cms/Dashboard";
 import CmsProject from "./pages/cms/CmsProject";
+import ProtectedRoute from "./pages/cms/ProtectedRoute";
 
 function App() {
   return (
@@ -42,7 +43,7 @@ function App() {
 
         {/* CMS Route */}
         <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         <Route path="/dashboard/cms-project" element={<CmsProject />} />
 
         <Route

@@ -12,27 +12,27 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  // panggil project
-  useEffect(() => {
-    fetch("http://localhost:5000/admin")
-      .then((response) => response.json())
-      .then((data) => {
-        setUsernameCheck(data[0].username);
-        setPasswordCheck(data[0].password);
-      })
-      .catch(() => {
-        navigate("/server-down");
-      });
-  }, [navigate]);
+  // // panggil project
+  // useEffect(() => {
+  //   fetch("http://localhost:5000/admin")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setUsernameCheck(data[0].username);
+  //       setPasswordCheck(data[0].password);
+  //     })
+  //     .catch(() => {
+  //       navigate("/server-down");
+  //     });
+  // }, [navigate]);
 
-  // handle login
-  const handleLogin = () => {
-    if (usernameCheck === username && passwordCheck === password) {
-      navigate('/dashboard')
-    } else {
-      console.log("login gagal");
-    }
-  };
+  // // handle login
+  // const handleLogin = () => {
+  //   if (usernameCheck === username && passwordCheck === password) {
+  //     navigate('/dashboard')
+  //   } else {
+  //     console.log("login gagal");
+  //   }
+  // };
 
   return (
     <div className="fixed inset-0 flex items-center justify-center overflow-auto">
@@ -51,7 +51,7 @@ export default function Login() {
             onSubmit={
               (e) => {
                 e.preventDefault(); // Mencegah refresh halaman
-                handleLogin(); // Menjalankan fungsi login
+                //handleLogin(); // Menjalankan fungsi login
               } // Mencegah refresh halaman
             }
           >
