@@ -44,7 +44,7 @@ function App() {
         {/* CMS Route */}
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-        <Route path="/dashboard/cms-project" element={<CmsProject />} />
+        <Route path="/dashboard/cms-project" element={<ProtectedRoute><CmsProject /></ProtectedRoute>} />
 
         <Route
           path="/server-down"

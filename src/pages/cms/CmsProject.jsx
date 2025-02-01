@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CardCmsProject from "./CardCmsProject";
+import expired from "./utils/expiredToken";
 
 export default function CmsProject() {
+  useEffect(() => {
+    expired();
+  }, []);
   const navigate = useNavigate();
 
   useEffect(() => {

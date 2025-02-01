@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CardCMS from "../../components/cms/CardCMS";
+import expired from "./utils/expiredToken";
 
 export default function Dashboard() {
+  useEffect(() => {
+    expired();
+  }, []);
+
   const navigate = useNavigate();
 
   const [projects, setProjects] = useState([]);
@@ -62,7 +67,9 @@ export default function Dashboard() {
     <div className="p-5">
       <div className="mb-5 p-3 shadow-md flex justify-between items-center">
         <div> Welcome Admin</div>
-        <button className="bg-red-500 text-white px-2 py-1 rounded-sm hover:scale-105">Logout</button>
+        <button className="bg-red-500 text-white px-2 py-1 rounded-sm hover:scale-105">
+          Logout
+        </button>
       </div>
       <div className="p-5 shadow-md">
         <h1 className=" text-lg pb-4">Content Management</h1>
