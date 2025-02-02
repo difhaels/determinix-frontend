@@ -71,37 +71,59 @@ export default function ShowcaseDetail() {
           </div>
         </div>
         <div className="bg-white p-4 rounded shadow-lg">
-          <img src={project.img} alt={project.title} />
-          <h1>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum
-            reprehenderit, ea delectus possimus necessitatibus sed impedit,
-            porro, voluptatum dolorem fugiat quidem veniam? Molestiae nisi,
-            facere suscipit facilis, fugit eius temporibus mollitia obcaecati
-            officia, qui beatae.
-          </h1>
-          <img src={project.img} alt={project.title} />
-          <h1>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum
-            reprehenderit, ea delectus possimus necessitatibus sed impedit,
-            porro, voluptatum dolorem fugiat quidem veniam? Molestiae nisi,
-            facere suscipit facilis, fugit eius temporibus mollitia obcaecati
-            officia, qui beatae.
-          </h1>
-          <img src={project.img} alt={project.title} />
-          <h1>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum
-            reprehenderit, ea delectus possimus necessitatibus sed impedit,
-            porro, voluptatum dolorem fugiat quidem veniam? Molestiae nisi,
-            facere suscipit facilis, fugit eius temporibus mollitia obcaecati
-            officia, qui beatae.
-          </h1>
-          <h1>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum
-            reprehenderit, ea delectus possimus necessitatibus sed impedit,
-            porro, voluptatum dolorem fugiat quidem veniam? Molestiae nisi,
-            facere suscipit facilis, fugit eius temporibus mollitia obcaecati
-            officia, qui beatae.
-          </h1>
+          {Array.isArray(project.imgUrl) ? (
+            <>
+              <img src={project.imgUrl[0]} alt={project.title} />
+              <h1 className="py-1">{project.description}</h1>
+              {project.imgUrl[1] ? (
+                <div>
+                  <h1 className="font-semibold pb-1">Attachment 1:</h1>{" "}
+                  <img src={project.imgUrl[1]} alt={project.title} />
+                  <h1>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Laborum reprehenderit, ea delectus possimus necessitatibus
+                    sed impedit, porro, voluptatum dolorem fugiat quidem veniam?
+                    Molestiae nisi, facere suscipit facilis, fugit eius
+                    temporibus mollitia obcaecati officia, qui beatae.
+                  </h1>
+                </div>
+              ) : (
+                null
+              )}
+              {project.imgUrl[2] ? (
+                <div>
+                  <h1 className="font-semibold pb-1">Attachment 1:</h1>{" "}
+                  <img src={project.imgUrl[1]} alt={project.title} />
+                  <h1>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Laborum reprehenderit, ea delectus possimus necessitatibus
+                    sed impedit, porro, voluptatum dolorem fugiat quidem veniam?
+                    Molestiae nisi, facere suscipit facilis, fugit eius
+                    temporibus mollitia obcaecati officia, qui beatae.
+                  </h1>
+                </div>
+              ) : (
+                null
+              )}
+              {project.imgUrl[3] ? (
+                <div>
+                  <h1 className="font-semibold pb-1">Attachment 1:</h1>{" "}
+                  <img src={project.imgUrl[1]} alt={project.title} />
+                  <h1>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Laborum reprehenderit, ea delectus possimus necessitatibus
+                    sed impedit, porro, voluptatum dolorem fugiat quidem veniam?
+                    Molestiae nisi, facere suscipit facilis, fugit eius
+                    temporibus mollitia obcaecati officia, qui beatae.
+                  </h1>
+                </div>
+              ) : (
+                null
+              )}
+            </>
+          ) : (
+            null
+          )}
         </div>
         <div className="footer pt-2">
           <Footer fix={0} />

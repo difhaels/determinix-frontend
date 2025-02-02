@@ -54,7 +54,10 @@ export default function Showcase() {
                       ? project.members.map((member) => member.name)
                       : []
                   }
-                  img={project.img}
+                  imgBanner={project.imgUrl[0]}
+                  img1={project.imgUrl[1]}
+                  img2={project.imgUrl[2]}
+                  img3={project.imgUrl[3]}
                   full={true}
                 />
               ))

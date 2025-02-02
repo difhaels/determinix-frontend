@@ -2,7 +2,7 @@ import React from "react";
 import { EllipsisHorizontalIcon } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
 
-export default function CardShowCase({ id, title, date, members, img, full }) {
+export default function CardShowCase({ id, title, date, members,imgBanner, full }) {
   const participant = members ? members.slice(0, 3).map(member => member.split(" ")[0]) : [];
   return (
     <Link
@@ -15,7 +15,7 @@ export default function CardShowCase({ id, title, date, members, img, full }) {
     >
       <div className="w-72 h-48 overflow-hidden">
         <img
-          src={img}
+          src={imgBanner}
           alt={title}
           className="w-full h-full object-cover rounded-sm"
         />

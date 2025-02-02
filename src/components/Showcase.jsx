@@ -32,6 +32,7 @@ export default function Showcase() {
       <Title what={"Showcase"} />
       <div className="flex justify-center py-10 flex-wrap gap-3">
         {projectSlice.map((project) => {
+          console.log(project.imgUrl)
           return (
             <CardShowCase
               key={project._id}
@@ -43,7 +44,7 @@ export default function Showcase() {
                   ? project.members.map((member) => member.name)
                   : []
               }
-              img={project.img}
+              imgBanner={project.imgUrl[0]}
               full={true}
             />
           );
