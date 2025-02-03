@@ -77,53 +77,27 @@ export default function ShowcaseDetail() {
               <h1 className="py-1">{project.description}</h1>
               {project.imgUrl[1] ? (
                 <div>
-                  <h1 className="font-semibold pb-1">Attachment 1:</h1>{" "}
+                  <h1 className="font-semibold py-2">Attachment 1:</h1>{" "}
                   <img src={project.imgUrl[1]} alt={project.title} />
-                  <h1>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Laborum reprehenderit, ea delectus possimus necessitatibus
-                    sed impedit, porro, voluptatum dolorem fugiat quidem veniam?
-                    Molestiae nisi, facere suscipit facilis, fugit eius
-                    temporibus mollitia obcaecati officia, qui beatae.
-                  </h1>
+                  {project.att1 ? <h1>{project.att1}</h1> : null}
                 </div>
-              ) : (
-                null
-              )}
+              ) : null}
               {project.imgUrl[2] ? (
                 <div>
-                  <h1 className="font-semibold pb-1">Attachment 1:</h1>{" "}
-                  <img src={project.imgUrl[1]} alt={project.title} />
-                  <h1>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Laborum reprehenderit, ea delectus possimus necessitatibus
-                    sed impedit, porro, voluptatum dolorem fugiat quidem veniam?
-                    Molestiae nisi, facere suscipit facilis, fugit eius
-                    temporibus mollitia obcaecati officia, qui beatae.
-                  </h1>
+                  <h1 className="font-semibold py-2">Attachment 1:</h1>{" "}
+                  <img src={project.imgUrl[2]} alt={project.title} />
+                  {project.att2 ? <h1>{project.att2}</h1> : null}
                 </div>
-              ) : (
-                null
-              )}
+              ) : null}
               {project.imgUrl[3] ? (
                 <div>
-                  <h1 className="font-semibold pb-1">Attachment 1:</h1>{" "}
-                  <img src={project.imgUrl[1]} alt={project.title} />
-                  <h1>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Laborum reprehenderit, ea delectus possimus necessitatibus
-                    sed impedit, porro, voluptatum dolorem fugiat quidem veniam?
-                    Molestiae nisi, facere suscipit facilis, fugit eius
-                    temporibus mollitia obcaecati officia, qui beatae.
-                  </h1>
+                  <h1 className="font-semibold py-2">Attachment 1:</h1>{" "}
+                  <img src={project.imgUrl[3]} alt={project.title} />
+                  {project.att3 ? <h1>{project.att3}</h1> : null}
                 </div>
-              ) : (
-                null
-              )}
+              ) : null}
             </>
-          ) : (
-            null
-          )}
+          ) : null}
         </div>
         <div className="footer pt-2">
           <Footer fix={0} />
