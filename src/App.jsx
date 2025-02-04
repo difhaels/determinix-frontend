@@ -20,6 +20,7 @@ import Nothing from "./components/Nothing";
 import Dashboard from "./pages/cms/Dashboard";
 import CmsProject from "./pages/cms/CmsProject";
 import ProtectedRoute from "./pages/cms/ProtectedRoute";
+import AddProject from "./content/AddProject";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         <Route path="/dashboard/cms-project" element={<ProtectedRoute><CmsProject /></ProtectedRoute>} />
+        <Route path="/add-project" element={<ProtectedRoute><AddProject /></ProtectedRoute>} /> 
 
         <Route
           path="/server-down"

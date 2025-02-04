@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CardCmsProject from "./CardCmsProject";
 import expired from "./utils/expiredToken";
 
@@ -52,11 +52,11 @@ export default function CmsProject() {
             <span className="text-green-500">{projects.length}</span>{" "}
           </span>
         </div>
-        <div className="mt-4 bg-green-500 text-white flex justify-center items-center p-3 hover:bg-green-400">
+        <Link to={"/add-project"} className="mt-4 bg-green-500 text-white flex justify-center items-center p-3 hover:bg-green-400">
           <div className="w-full border-2 border-dashed flex justify-center py-2 text-lg">
             <h1>Create New Project "+"</h1>
           </div>
-        </div>
+        </Link>
       </div>
       <div className="p-5 mb-5 shadow-md">
         <div className="flex justify-between items-center mb-3">
