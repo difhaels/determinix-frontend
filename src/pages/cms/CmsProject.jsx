@@ -37,13 +37,7 @@ export default function CmsProject() {
     <div className="p-5">
       <div className="p-5 mb-5 shadow-md flex justify-between">
         <h1 className="text-xl font-semibold">Project Management</h1>
-        <button
-          onClick={() => {
-            navigate(-1);
-          }}
-        >
-          back
-        </button>
+        <Link className="bg-red-500 text-white px-2 py-1 rounded-sm hover:scale-105" to={"/dashboard"}>back</Link>
       </div>
       <div className="p-5 mb-5 shadow-md">
         <div className="font-semibold">
