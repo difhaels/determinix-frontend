@@ -15,7 +15,9 @@ export default function ShowcaseDetail() {
   useEffect(() => {
     fetch(`http://localhost:5000/projects/${id}`)
       .then((response) => response.json())
-      .then((data) => setProject(data))
+      .then((data) => {
+        setProject(data);
+      })
       .catch(() => {
         navigate("/server-down");
       });
@@ -34,28 +36,42 @@ export default function ShowcaseDetail() {
             <h1 className="text-white text-xl font-semibold">
               {project.title}
             </h1>
-            <div className="flex gap-2">
-              {Array.isArray(project.members) && project.members.length > 0 ? (
-                project.members.map((member) => {
-                  return (
-                    <Link
-                      to={`/members/${member._id}`}
-                      className="cursor-pointer flex text-white gap-2"
-                    >
-                      <h1
-                        className="first-letter:uppercase text-white hover:text-blue-600"
-                        key={member._id}
+            <span className="flex text-white gap-2">
+              Head :
+              <Link
+                to={`/members/${project?.head?._id}`}
+                className="cursor-pointer first-letter:uppercase text-white hover:text-blue-600"
+              >
+                {project?.head?.name}
+              </Link>
+            </span>
+            <span className="flex gap-2 text-white">
+              Contributor :
+              <div className="flex gap-2">
+                {Array.isArray(project.contributor) &&
+                project.contributor.length > 0 ? (
+                  project.contributor.map((cont) => {
+                    return (
+                      <Link
+                        to={`/members/${cont._id}`}
+                        className="cursor-pointer flex text-white gap-2"
                       >
-                        {member.name}
-                      </h1>
-                      {" | "}
-                    </Link>
-                  );
-                })
-              ) : (
-                <p>Loading...</p>
-              )}
-            </div>
+                        <h1
+                          className="first-letter:uppercase text-white hover:text-blue-600"
+                          key={cont._id}
+                        >
+                          {cont.name}
+                        </h1>
+                        {" | "}
+                      </Link>
+                    );
+                  })
+                ) : (
+                  <p>Loading...</p>
+                )}
+              </div>
+            </span>
+            <span className="text-white">Created At : {project.createdAt}</span>
           </div>
           <div
             onClick={() => {
@@ -71,32 +87,43 @@ export default function ShowcaseDetail() {
           </div>
         </div>
         <div className="bg-white p-4 rounded shadow-lg">
-          {Array.isArray(project.imgUrl) ? (
-            <>
-              <img src={project.imgUrl[0]} alt={project.title} />
-              <h1 className="py-1">{project.description}</h1>
-              {project.imgUrl[1] ? (
-                <div>
-                  <h1 className="font-semibold py-2">Attachment 1:</h1>{" "}
-                  <img src={project.imgUrl[1]} alt={project.title} />
-                  {project.att1 ? <h1>{project.att1}</h1> : null}
-                </div>
-              ) : null}
-              {project.imgUrl[2] ? (
-                <div>
-                  <h1 className="font-semibold py-2">Attachment 1:</h1>{" "}
-                  <img src={project.imgUrl[2]} alt={project.title} />
-                  {project.att2 ? <h1>{project.att2}</h1> : null}
-                </div>
-              ) : null}
-              {project.imgUrl[3] ? (
-                <div>
-                  <h1 className="font-semibold py-2">Attachment 1:</h1>{" "}
-                  <img src={project.imgUrl[3]} alt={project.title} />
-                  {project.att3 ? <h1>{project.att3}</h1> : null}
-                </div>
-              ) : null}
-            </>
+          <img src={project.banner} alt="" />
+          <h1 className="py-3">{project.description}</h1>
+
+          {project.imgAtt1 ? (
+            <div>
+              <h1 className="font-semibold pb-2">Attachment 1:</h1>
+              <img src={project.imgAtt1} />
+            </div>
+          ) : null}
+          {project.att1description ? (
+            <div>
+              <h1 className="py-3">{project.att1description}</h1>
+            </div>
+          ) : null}
+
+          {project.imgAtt2 ? (
+            <div>
+              <h1 className="font-semibold pb-2">Attachment 2:</h1>
+              <img src={project.imgAtt2} />
+            </div>
+          ) : null}
+          {project.att2description ? (
+            <div>
+              <h1 className="py-3">{project.att2description}</h1>
+            </div>
+          ) : null}
+
+          {project.imgAtt3 ? (
+            <div>
+              <h1 className="font-semibold pb-2">Attachment 3:</h1>
+              <img src={project.imgAtt3} />
+            </div>
+          ) : null}
+          {project.att3description ? (
+            <div>
+              <h1 className="py-3">{project.att3description}</h1>
+            </div>
           ) : null}
         </div>
         <div className="footer pt-2">
