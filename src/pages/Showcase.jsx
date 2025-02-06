@@ -48,16 +48,14 @@ export default function Showcase() {
                   key={`${project._id}-${index}`}
                   id={project._id}
                   title={project.title}
-                  date={project.date}
-                  members={
-                    Array.isArray(project.members)
-                      ? project.members.map((member) => member.name)
+                  createdAt={project.createdAt}
+                  head={project.head}
+                  contributor={
+                    Array.isArray(project.contributor)
+                      ? project.contributor.map((member) => member.name)
                       : []
                   }
-                  imgBanner={project.imgUrl[0]}
-                  img1={project.imgUrl[1]}
-                  img2={project.imgUrl[2]}
-                  img3={project.imgUrl[3]}
+                  banner={project.banner}
                   full={true}
                 />
               ))

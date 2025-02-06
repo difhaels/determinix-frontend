@@ -6,7 +6,6 @@ import More from "../elements/More";
 import { useNavigate } from "react-router-dom";
 
 export default function Showcase() {
-
   const navigate = useNavigate();
   const [projects, setProjects] = useState([]);
 
@@ -32,19 +31,19 @@ export default function Showcase() {
       <Title what={"Showcase"} />
       <div className="flex justify-center py-10 flex-wrap gap-3">
         {projectSlice.map((project) => {
-          console.log(project.imgUrl)
           return (
             <CardShowCase
               key={project._id}
               id={project._id}
               title={project.title}
-              date={project.date}
-              members={
-                Array.isArray(project.members)
-                  ? project.members.map((member) => member.name)
+              createdAt={project.createdAt}
+              head={project.head}
+              contributor={
+                Array.isArray(project.contributor)
+                  ? project.contributor.map((member) => member.name)
                   : []
               }
-              imgBanner={project.imgUrl[0]}
+              banner={project.banner}
               full={true}
             />
           );

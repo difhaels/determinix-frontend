@@ -15,7 +15,6 @@ export default function AddProject() {
       });
   }, [navigate]);
 
-  const ts = ["676e43065c3d5e7d283dc0ba", "676e43065c3d5e7d283dc0ba"];
   const handleProjectSubmit = async (
     title,
     description,
@@ -28,7 +27,7 @@ export default function AddProject() {
     const formData = new FormData();
     formData.append("title", title);
     formData.append("description", description);
-    ts.forEach((t) => formData.append("members", t)); // Pastikan ini adalah array ID anggota
+    members.forEach((t) => formData.append("members", t)); // Pastikan ini adalah array ID anggota
     for (let i = 0; i < files.length; i++) {
       formData.append("images", files[i]);
     }
@@ -119,7 +118,7 @@ export default function AddProject() {
               <input
                 id="banner"
                 type="file"
-                multiple
+                name="banner"
                 onChange={handleImageChange}
                 required
               />
@@ -159,8 +158,8 @@ export default function AddProject() {
               <input
                 id="att1"
                 type="file"
-                multiple
-                onChange={handleImageChange}
+                name="att1"
+                accept="image/*"
               />
             </div>
 
@@ -187,8 +186,8 @@ export default function AddProject() {
               <input
                 id="att2"
                 type="file"
-                multiple
-                onChange={handleImageChange}
+                name="att2"
+                accept="image/*"
               />
             </div>
 
@@ -215,8 +214,8 @@ export default function AddProject() {
               <input
                 id="att3"
                 type="file"
-                multiple
-                onChange={handleImageChange}
+                name="att3"
+                accept="image/*"
               />
             </div>
 
