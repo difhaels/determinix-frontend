@@ -17,10 +17,10 @@ import MemberShowcase from "./components/MemberShowcase";
 import MemberArticle from "./components/MemberArticle";
 
 import Nothing from "./components/Nothing";
-import Dashboard from "./pages/cms/Dashboard";
-import CmsProject from "./pages/cms/CmsProject";
-import ProtectedRoute from "./pages/cms/ProtectedRoute";
-import AddProject from "./content/AddProject";
+import Dashboard from "./admin/Dashboard";
+import CmsProject from "./admin/project/CmsProject";
+import ProtectedRoute from "./routes/ProtectedRoute";
+import AddProject from "./admin/project/AddProject";
 
 function App() {
   return (

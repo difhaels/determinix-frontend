@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import CardCMS from "../../components/cms/CardCMS";
+import CardCMS from "./CardCMS";
 import expired from "./utils/expiredToken";
 
 export default function Dashboard() {

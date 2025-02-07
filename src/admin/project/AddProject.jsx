@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Footer from "../components/Footer";
+import Footer from "../../components/Footer";
 import Select from "react-select";
 
 export default function AddProject() {
