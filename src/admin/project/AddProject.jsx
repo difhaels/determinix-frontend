@@ -86,7 +86,9 @@ export default function AddProject() {
   // variable2 form
   const [title, setTitle] = useState("");
   const [headId, setHeadId] = useState("");
+  const [headLabel, setHeadLabel] = useState("");
   const [contributorIds, setContributorIds] = useState([]);
+  const [contributorLabel, setContributorLabel] = useState(null);
   const [banner, setBanner] = useState(null);
   const [description, setDescription] = useState("");
   const [imgAtt1, setImgAtt1] = useState(null);
@@ -98,29 +100,43 @@ export default function AddProject() {
 
   // untuk menghandle perubahan head
   const handleHeadChange = (selectedOptions) => {
+    setHeadLabel(selectedOptions.label);
     setHeadId(selectedOptions.value); // Simpan hanya ID
   };
 
   // untuk menghandle perubahan contributor
   const handleContributorChange = (selectedOptions) => {
+    setContributorLabel(selectedOptions.map((option) => option.label));
     setContributorIds(selectedOptions.map((option) => option.value)); // Simpan hanya ID
   };
 
-  // untuk menghandle perubahan gambar image
+  const [bannerPreview, setBannerPreview] = useState(null);
+  const [att1Preview, setAtt1Preview] = useState(null);
+  const [att2Preview, setAtt2Preview] = useState(null);
+  const [att3Preview, setAtt3Preview] = useState(null);
+
   const handleBanner = (e) => {
-    setBanner(e.target.files[0]);
+    const file = e.target.files[0];
+    setBanner(file);
+    setBannerPreview(URL.createObjectURL(file));
   };
-  // untuk menghandle perubahan gambar image
+
   const handleAtt1 = (e) => {
-    setImgAtt1(e.target.files[0]);
+    const file = e.target.files[0];
+    setImgAtt1(file);
+    setAtt1Preview(URL.createObjectURL(file));
   };
-  // untuk menghandle perubahan gambar image
+
   const handleAtt2 = (e) => {
-    setImgAtt2(e.target.files[0]);
+    const file = e.target.files[0];
+    setImgAtt2(file);
+    setAtt2Preview(URL.createObjectURL(file));
   };
-  // untuk menghandle perubahan gambar image
+
   const handleAtt3 = (e) => {
-    setImgAtt3(e.target.files[0]);
+    const file = e.target.files[0];
+    setImgAtt3(file);
+    setAtt3Preview(URL.createObjectURL(file));
   };
 
   return (
@@ -313,7 +329,75 @@ export default function AddProject() {
               </button>
             </form>
           </div>
-          <div className="w-1/2"></div>
+          <div className="w-1/2">
+            <h1 className="text-lg font-semibold p-3">Preview</h1>
+            <div className="bg-slate-600 m-3 p-3">
+              {title && (
+                <h1 className="text-white text-lg font-semibold">{title}</h1>
+              )}
+              {headLabel && (
+                <span className="flex text-white gap-2">
+                  Head : {headLabel}
+                </span>
+              )}
+
+              {contributorLabel && (
+                <span className="flex gap-2 text-white mb-3">
+                  Contributor :
+                  <div className="flex gap-2">
+                    {contributorLabel.map((cont) => {
+                      return (
+                        <h1 className="cursor-pointer flex text-white gap-2">
+                          <h1
+                            className="first-letter:uppercase text-white hover:text-blue-600"
+                            key={cont}
+                          >
+                            {cont}
+                          </h1>
+                          {" | "}
+                        </h1>
+                      );
+                    })}
+                  </div>
+                </span>
+              )}
+
+              <div className="bg-white p-4 rounded-sm shadow-lg">
+                {bannerPreview && (
+                  <img
+                    src={bannerPreview}
+                    alt="Banner Preview"
+                    className="w-full"
+                  />
+                )}
+                {description && <h1 className="py-3">{description}</h1>}
+                {att1Preview && (
+                  <img
+                    src={att1Preview}
+                    alt="Attachment 1 Preview"
+                    className="w-full"
+                  />
+                )}
+                {att1description && <h1 className="py-3">{att1description}</h1>}
+                {att2Preview && (
+                  <img
+                    src={att2Preview}
+                    alt="Attachment 2 Preview"
+                    className="w-full"
+                  />
+                )}
+                {att2description && <h1 className="py-3">{att2description}</h1>}
+                {att3Preview && (
+                  <img
+                    src={att3Preview}
+                    alt="Attachment 3 Preview"
+                    className="w-full"
+                  />
+                )}
+                {att3description && <h1 className="py-3">{att3description}</h1>}
+              </div>
+            </div>
+          </div>
         </div>
         {showNotification && (
           <Notification
