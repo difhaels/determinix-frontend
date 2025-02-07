@@ -7,7 +7,7 @@ export default function Ups({ type, idOf, nameOf, close, onDelete }) {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/delete/project/${id}`, {
+      const response = await fetch(`http://localhost:5000/projects/${id}`, {
         method: "DELETE",
       });
       if (response.ok) {

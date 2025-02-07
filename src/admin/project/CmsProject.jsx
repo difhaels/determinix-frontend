@@ -37,7 +37,12 @@ export default function CmsProject() {
     <div className="p-5">
       <div className="p-5 mb-5 shadow-md flex justify-between">
         <h1 className="text-xl font-semibold">Project Management</h1>
-        <Link className="bg-red-500 text-white px-2 py-1 rounded-sm hover:scale-105" to={"/dashboard"}>back</Link>
+        <Link
+          className="bg-red-500 text-white px-2 py-1 rounded-sm hover:scale-105"
+          to={"/dashboard"}
+        >
+          back
+        </Link>
       </div>
       <div className="p-5 mb-5 shadow-md">
         <div className="font-semibold">
@@ -46,7 +51,10 @@ export default function CmsProject() {
             <span className="text-green-500">{projects.length}</span>{" "}
           </span>
         </div>
-        <Link to={"/add-project"} className="mt-4 bg-green-500 text-white flex justify-center items-center p-3 hover:bg-green-400">
+        <Link
+          to={"/add-project"}
+          className="mt-4 bg-green-500 text-white flex justify-center items-center p-3 hover:bg-green-400"
+        >
           <div className="w-full border-2 border-dashed flex justify-center py-2 text-lg">
             <h1>Create New Project "+"</h1>
           </div>
@@ -62,20 +70,20 @@ export default function CmsProject() {
             xmlns="http://www.w3.org/2000/svg"
             onClick={fetchProjects}
           >
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
             <g
               id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             ></g>
             <g id="SVGRepo_iconCarrier">
               {" "}
               <path
                 d="M5.39092 5.89092L8.5 9H2.5V3L5.39092 5.89092ZM5.39092 5.89092C7.03504 4.1131 9.38753 3 12 3C16.6326 3 20.4476 6.50005 20.9451 11M18.6091 18.1091L21.5 21V15H15.5L18.6091 18.1091ZM18.6091 18.1091C16.965 19.8869 14.6125 21 12 21C7.36745 21 3.55237 17.5 3.05493 13"
                 stroke="#000000"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></path>{" "}
             </g>
           </svg>
