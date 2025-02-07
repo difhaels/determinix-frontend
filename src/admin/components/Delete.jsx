@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import error from "../../assets/error.png";
 
-export default function Ups({ type, idOf, nameOf, close, onDelete }) {
+export default function Delete({ type, idOf, nameOf, close, onDelete }) {
   const [confirm, setConfirm] = useState("");
 
   const handleDelete = async (id) => {
