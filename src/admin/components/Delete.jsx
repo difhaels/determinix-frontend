@@ -11,7 +11,6 @@ export default function Delete({ type, idOf, nameOf, close, onDelete }) {
         method: "DELETE",
       });
       if (response.ok) {
-        alert("Project deleted successfully");
         // Perbarui daftar proyek setelah penghapusan
         onDelete(id)
       } else {

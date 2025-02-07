@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import CardCmsProject from "../components/CardCmsProject";
 import expired from "../utils/expiredToken";
+import Notification from "../components/Notification";
 
 export default function CmsProject() {
+  const [showNotification, setShowNotification] = useState(false);
+
   useEffect(() => {
     expired();
   }, []);
@@ -27,10 +30,10 @@ export default function CmsProject() {
       });
   };
 
-  const handleDelete = (id) => {
-    setProjects((prevProjects) =>
-      prevProjects.filter((project) => project._id !== id)
-    );
+  const handleDelete = (deletedId) => {
+    setProjects((prev) => prev.filter((p) => p._id !== deletedId));
+    setShowNotification(true);
+    setTimeout(() => setShowNotification(false), 3000);
   };
 
   return (
@@ -107,6 +110,15 @@ export default function CmsProject() {
             ))
           ) : (
             <p>Loading projects...</p>
+          )}
+          {/* Notifikasi Global di Parent */}
+          {showNotification && (
+            <Notification
+              close={() => setShowNotification(false)}
+              button="close"
+              what="Project Deleted Successfully"
+              daijoubu={true}
+            />
           )}
         </div>
       </div>

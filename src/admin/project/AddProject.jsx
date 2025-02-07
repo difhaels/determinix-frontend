@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Select from "react-select";
+import Notification from "../components/Notification";
 
 export default function AddProject() {
+  const [showNotification, setShowNotification] = useState(false);
   // untuk pindah halaman
   const navigate = useNavigate();
 
@@ -56,13 +58,10 @@ export default function AddProject() {
     });
 
     const data = await response.json();
-    console.log(data);
-    console.log(headId)
-    console.log(contributorIds)
     if (response.ok) {
-      alert("Proyek berhasil dibuat!");
+      setShowNotification(true);
     } else {
-      alert("Gagal membuat proyek");
+      alert(`Gagal membuat proyek: ${data.message || "Terjadi kesalahan"}`);
     }
   };
 
@@ -90,9 +89,9 @@ export default function AddProject() {
   const [contributorIds, setContributorIds] = useState([]);
   const [banner, setBanner] = useState(null);
   const [description, setDescription] = useState("");
-  const [imgAtt1, setImgAtt1] = useState("");
-  const [imgAtt2, setImgAtt2] = useState("");
-  const [imgAtt3, setImgAtt3] = useState("");
+  const [imgAtt1, setImgAtt1] = useState(null);
+  const [imgAtt2, setImgAtt2] = useState(null);
+  const [imgAtt3, setImgAtt3] = useState(null);
   const [att1description, setAtt1description] = useState("");
   const [att2description, setAtt2description] = useState("");
   const [att3description, setAtt3description] = useState("");
@@ -316,6 +315,14 @@ export default function AddProject() {
           </div>
           <div className="w-1/2"></div>
         </div>
+        {showNotification && (
+          <Notification
+            close={() => setShowNotification(false)}
+            button="close"
+            what="Project Added Successfully"
+            daijoubu={true}
+          />
+        )}
       </div>
       <Footer />
     </>
