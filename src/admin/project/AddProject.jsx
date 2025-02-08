@@ -65,7 +65,7 @@ export default function AddProject() {
       if (response.ok) {
         setShowNotification(true);
       } else {
-        alert("Gagal membuat proyek");
+        alert("Gagal membuat proyek: " + data.message);
       }
     } catch (error) {
       console.error("Error:", error);

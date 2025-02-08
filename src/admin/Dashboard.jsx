@@ -15,6 +15,22 @@ export default function Dashboard() {
   const [articles, setArticles] = useState([]);
   const [members, setMembers] = useState([]);
 
+  const handleLogout = () => {
+    fetch("http://localhost:5000/admin/logout", {
+      method: "POST", // Sebaiknya POST untuk operasi perubahan
+      credentials: "include", // Pastikan cookie sesi dikirim jika pakai session
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error("Logout gagal!");
+        return response.json();
+      })
+      .then(() => {
+        navigate("/login");
+      })
+      .catch(() => {
+        alert("Logout gagal");
+      });
+  };
   // panggil project
   useEffect(() => {
     fetch("http://localhost:5000/projects")
@@ -67,7 +83,7 @@ export default function Dashboard() {
     <div className="p-5">
       <div className="mb-5 p-3 shadow-md flex justify-between items-center">
         <div> Welcome Admin</div>
-        <button className="bg-red-500 text-white px-2 py-1 rounded-sm hover:scale-105">
+        <button onClick={handleLogout} className="bg-red-500 text-white px-2 py-1 rounded-sm hover:scale-105">
           Logout
         </button>
       </div>
