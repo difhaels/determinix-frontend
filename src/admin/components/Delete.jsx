@@ -2,12 +2,12 @@ import React, { useState } from "react";
 
 import error from "../../assets/error.png";
 
-export default function Delete({ type, idOf, nameOf, close, onDelete }) {
+export default function Delete({ types, type, idOf, nameOf, close, onDelete }) {
   const [confirm, setConfirm] = useState("");
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/projects/${id}`, {
+      const response = await fetch(`http://localhost:5000/${types}/${id}`, {
         method: "DELETE",
       });
       if (response.ok) {

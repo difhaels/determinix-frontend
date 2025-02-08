@@ -4,7 +4,7 @@ import Card from "../components/Card";
 import expired from "../utils/expiredToken";
 import Notification from "../components/Notification";
 
-export default function Project() {
+export default function Activity() {
   useEffect(() => {
     expired();
   }, []);
@@ -12,15 +12,14 @@ export default function Project() {
   const navigate = useNavigate();
 
   const [showNotification, setShowNotification] = useState(false);
-
-  const [projects, setProjects] = useState([]);
-
-  // panggil project
-  const fetchProjects = () => {
-    fetch("http://localhost:5000/projects")
+  
+  const [activities, setActivities] = useState([]);
+  // panggil activity
+  const fetchActivities = () => {
+    fetch("http://localhost:5000/activities")
       .then((response) => response.json())
       .then((data) => {
-        setProjects(data);
+        setActivities(data);
       })
       .catch(() => {
         navigate("/server-down");
@@ -28,11 +27,11 @@ export default function Project() {
   };
 
   useEffect(() => {
-    fetchProjects();
+    fetchActivities();
   }, [navigate]);
 
   const handleDelete = (deletedId) => {
-    setProjects((prev) => prev.filter((p) => p._id !== deletedId));
+    setActivities((prev) => prev.filter((p) => p._id !== deletedId));
     setShowNotification(true);
     setTimeout(() => setShowNotification(false), 5000);
   };
@@ -40,7 +39,7 @@ export default function Project() {
   return (
     <div className="p-5">
       <div className="p-5 mb-5 shadow-md flex justify-between">
-        <h1 className="text-xl font-semibold">Project Management</h1>
+        <h1 className="text-xl font-semibold">Activity Management</h1>
         <Link
           className="bg-red-500 text-white px-2 py-1 rounded-sm hover:scale-105"
           to={"/dashboard"}
@@ -51,8 +50,8 @@ export default function Project() {
       <div className="p-5 mb-5 shadow-md">
         <div className="font-semibold">
           <span>
-            Total Project :{" "}
-            <span className="text-green-500">{projects.length}</span>{" "}
+            Total Activity :{" "}
+            <span className="text-green-500">{activities.length}</span>{" "}
           </span>
         </div>
         <Link
@@ -60,19 +59,19 @@ export default function Project() {
           className="mt-4 bg-green-500 text-white flex justify-center items-center p-3 hover:bg-green-400"
         >
           <div className="w-full border-2 border-dashed flex justify-center py-2 text-lg">
-            <h1>Create New Project "+"</h1>
+            <h1>Create New Activity "+"</h1>
           </div>
         </Link>
       </div>
       <div className="p-5 mb-5 shadow-md">
         <div className="flex justify-between items-center mb-3">
-          <h1>Projects</h1>
+          <h1>Activities</h1>
           <svg
             className="w-4 cursor-pointer"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            onClick={fetchProjects}
+            onClick={fetchActivities}
           >
             <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
             <g
@@ -93,28 +92,24 @@ export default function Project() {
           </svg>
         </div>
         <div>
-          {Array.isArray(projects) && projects.length > 0 ? (
-            projects.map((project, index) => (
+          {Array.isArray(activities) && activities.length > 0 ? (
+            activities.map((activity, index) => (
               <Card
                 no={index}
-                key={`${project._id}-${index}`}
-                // linked and delete
-                id={project._id}
-                title={project.title}
-                types={"projects"}
-                type={"project"}
-                date={project.date}
+                key={`${activity._id}-${index}`}
+                id={activity._id}
+                title={activity.title}
+                date={activity.date}
                 members={
-                  Array.isArray(project.members)
-                    ? project.members.map((member) => member.name)
+                  Array.isArray(activity.members)
+                    ? activity.members.map((member) => member.name)
                     : []
                 }
                 onDelete={handleDelete}
-                where={"showcase"}
               />
             ))
           ) : (
-            <p>Loading projects...</p>
+            <p>Loading activities...</p>
           )}
           {/* Notifikasi Global di Parent */}
           {showNotification && (

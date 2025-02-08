@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Login from "./pages/Login";
+import Nothing from "./components/Nothing";
+import ProtectedRoute from "./routes/ProtectedRoute";
 
 import Home from "./pages/Home";
 import Showcase from "./pages/Showcase";
@@ -16,10 +18,9 @@ import MemberDetail from "./components/MemberDetail";
 import MemberShowcase from "./components/MemberShowcase";
 import MemberArticle from "./components/MemberArticle";
 
-import Nothing from "./components/Nothing";
 import Dashboard from "./admin/Dashboard";
 import Project from "./admin/project/Project";
-import ProtectedRoute from "./routes/ProtectedRoute";
+import Activity from "./admin/activity/Activity";
 import AddProject from "./admin/project/AddProject";
 
 function App() {
@@ -45,9 +46,11 @@ function App() {
         {/* CMS Route */}
         <Route path="/admin" element={<Login />} />
         <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-        
+
         <Route path="/dashboard/project" element={<ProtectedRoute><Project /></ProtectedRoute>} />
         <Route path="/add-project" element={<ProtectedRoute><AddProject /></ProtectedRoute>} /> 
+
+        <Route path="/dashboard/activity" element={<ProtectedRoute><Activity /></ProtectedRoute>} />
 
         <Route
           path="/server-down"
