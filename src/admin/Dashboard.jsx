@@ -94,9 +94,9 @@ export default function Dashboard() {
           <CardCMS
             what={"PROJECT"}
             many={projects.length}
-            where={"cms-project"}
+            where={"project"}
           />
-          <CardCMS what={"ACTIVITIES"} many={activities.length} />
+          <CardCMS what={"ACTIVITIES"} many={activities.length} where={"activity"} />
           <CardCMS what={"ARTICLES"} many={articles.length} />
           <CardCMS what={"MEMBERS"} many={members.length} />
         </div>

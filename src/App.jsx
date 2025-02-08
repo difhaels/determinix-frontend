@@ -18,7 +18,7 @@ import MemberArticle from "./components/MemberArticle";
 
 import Nothing from "./components/Nothing";
 import Dashboard from "./admin/Dashboard";
-import CmsProject from "./admin/project/CmsProject";
+import Project from "./admin/project/Project";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import AddProject from "./admin/project/AddProject";
 
@@ -43,9 +43,10 @@ function App() {
         <Route path="/members/:id/article" element={<MemberArticle />} />
 
         {/* CMS Route */}
-        <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={<Login />} />
         <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-        <Route path="/dashboard/cms-project" element={<ProtectedRoute><CmsProject /></ProtectedRoute>} />
+        
+        <Route path="/dashboard/project" element={<ProtectedRoute><Project /></ProtectedRoute>} />
         <Route path="/add-project" element={<ProtectedRoute><AddProject /></ProtectedRoute>} /> 
 
         <Route

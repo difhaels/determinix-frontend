@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import CardCmsProject from "../components/CardCmsProject";
+import CardProject from "../components/CardProject";
 import expired from "../utils/expiredToken";
 import Notification from "../components/Notification";
 
@@ -94,7 +94,7 @@ export default function CmsProject() {
         <div>
           {Array.isArray(projects) && projects.length > 0 ? (
             projects.map((project, index) => (
-              <CardCmsProject
+              <CardProject
                 no={index}
                 key={`${project._id}-${index}`}
                 id={project._id}

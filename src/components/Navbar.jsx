@@ -41,7 +41,7 @@ export default function Navbar({ isScrolled }) {
         </ul>
       </div>
       <Link
-        to={"/login"}
+        to={"/admin"}
         className="hidden lg:block bg-red-600 text-white px-2 py-1 rounded-sm cursor-pointer hover:scale-105"
       >
         Login
