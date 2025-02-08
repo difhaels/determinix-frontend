@@ -11,7 +11,7 @@ export default function Nothing({ what, desc }) {
         <h1 className="font-semibold text-lg">{what}</h1>
         <h1>{desc}</h1>
         <div className="pt-2">
-          <Link to={"/"} className="bg-sky-500 text-white p-1 rounded-sm">Refresh</Link>
+          <Link to={-1} className="bg-sky-500 text-white p-1 rounded-sm">Refresh</Link>
         </div>
       </div>
     </div>

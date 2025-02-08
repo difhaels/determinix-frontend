@@ -100,11 +100,8 @@ export default function Activity() {
                 id={activity._id}
                 title={activity.title}
                 date={activity.date}
-                members={
-                  Array.isArray(activity.members)
-                    ? activity.members.map((member) => member.name)
-                    : []
-                }
+                types={"activities"}
+                type={"activity"}
                 onDelete={handleDelete}
               />
             ))
@@ -116,7 +113,7 @@ export default function Activity() {
             <Notification
               close={() => setShowNotification(false)}
               button="close"
-              what="Project Deleted Successfully"
+              what="Activity Deleted Successfully"
               daijoubu={true}
             />
           )}

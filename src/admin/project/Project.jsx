@@ -104,11 +104,6 @@ export default function Project() {
                 types={"projects"}
                 type={"project"}
                 date={project.date}
-                members={
-                  Array.isArray(project.members)
-                    ? project.members.map((member) => member.name)
-                    : []
-                }
                 onDelete={handleDelete}
                 where={"showcase"}
               />

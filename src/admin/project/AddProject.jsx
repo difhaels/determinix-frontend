@@ -157,7 +157,7 @@ export default function AddProject() {
           <h1 className="text-xl font-semibold">Add Project</h1>
           <Link
             className="bg-red-500 text-white px-2 py-1 rounded-sm hover:scale-105"
-            to={"/dashboard/cms-project"}
+            to={"/dashboard/project"}
           >
             back
           </Link>
