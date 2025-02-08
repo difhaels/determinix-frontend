@@ -3,9 +3,11 @@ import { Link, useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Select from "react-select";
 import Notification from "../components/Notification";
+import Loading from "../components/Loading";
 
 export default function AddProject() {
   const [showNotification, setShowNotification] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   // untuk pindah halaman
   const navigate = useNavigate();
 
@@ -52,22 +54,31 @@ export default function AddProject() {
     if (att2description) formData.append("att2description", att2description);
     if (att3description) formData.append("att3description", att3description);
 
-    const response = await fetch("http://localhost:5000/projects", {
-      method: "POST",
-      body: formData,
-    });
+    try {
+      const response = await fetch("http://localhost:5000/projects", {
+        method: "POST",
+        body: formData,
+      });
 
-    const data = await response.json();
-    if (response.ok) {
-      setShowNotification(true);
-    } else {
-      alert(`Gagal membuat proyek: ${data.message || "Terjadi kesalahan"}`);
+      const data = await response.json();
+
+      if (response.ok) {
+        setShowNotification(true);
+      } else {
+        alert("Gagal membuat proyek");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert(`Gagal membuat proyek`);
+    } finally {
+      setIsLoading(false); // Matikan loading setelah request selesai
     }
   };
 
   // handle form/permintaan fe
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     await handleProjectSubmit({
       title,
       headId,
@@ -407,6 +418,7 @@ export default function AddProject() {
             daijoubu={true}
           />
         )}
+        {isLoading && <Loading what={"Creating Project!"}/>}
       </div>
       <Footer />
     </>
